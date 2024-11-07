@@ -5,9 +5,6 @@ document.getElementById("email").addEventListener("keydown", function (event) {
   }
 });
 
-console.log('connected');
-
-
 function submitForm() {
   const emailInput = document.getElementById("email");
   const email = emailInput.value;
