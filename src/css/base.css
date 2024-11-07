@@ -58,9 +58,3 @@ body {
 main {
   flex-grow: 1;
 }
-
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: 375px;
-}
