@@ -1,3 +1,83 @@
-.footer {
-  /* styles */
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+}
+
+.slogan {
+  margin: 10px 0;
+}
+
+.subscription-form {
+  margin: 20px 0;
+}
+
+input[type="email"] {
+  padding: 10px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .social-links li {
+    margin: 0 5px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 900px) {
+  .social-links li {
+    margin: 0 8px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 901px) {
+  .social-links li {
+    margin: 0 10px;
+  }
 }

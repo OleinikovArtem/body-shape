@@ -1,15 +1,55 @@
-<footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+<footer>
+  <div class="footer-content">
+    <div class="logo" onclick="window.location.href='index.html'">
+      YOUR ENERGY
+    </div>
+
+    <ul class="social-links">
+      <li>
+        <a href="https://www.facebook.com/goITclub/" target="_blank"
+          ><img
+            src="../img/facebook.svg"
+            alt="Facebook"
+            onmouseover="this.src='../img/facebook_hover.svg'"
+            onmouseout="this.src='../img/facebook.svg'"
+        /></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/goitclub/" target="_blank"
+          ><img
+            src="../img/instagram.svg"
+            alt="Instagram"
+            onmouseover="this.src='../img/instagram_hover.svg'"
+            onmouseout="this.src='../img/instagram.svg'"
+        /></a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/c/GoIT" target="_blank"
+          ><img
+            src="../img/youtube.svg"
+            alt="YouTube"
+            onmouseover="this.src='../img/youtube_hover.svg'"
+            onmouseout="this.src='../img/youtube.svg'"
+        /></a>
+      </li>
+    </ul>
+
+    <p class="slogan">Transforming your body shape with us</p>
+
+    <div class="subscription-form">
+      <p>Subscribe and learn about new exercises!</p>
+      <input type="email" id="email" placeholder="Email" pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required />
+      <button id="send-button">Send</button>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://goit.global/ua/privacy-policy/" target="_blank">Privacy Policy</a>
+      <span>/</span>
+      <a href="https://goit.global/ua/terms-of-use/" target="_blank">Terms of Service</a>
+    </div>
   </div>
+  <div class="footer-bottom">
+    <p>Your Energy. All rights reserved. ©2024</p>
+  </div>
+  <script src="/js/footer.js" type="module"></script>
 </footer>
