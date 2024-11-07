@@ -1,4 +1,3 @@
-
 footer {
   background-color: #000;
   color: #fff;
@@ -46,7 +45,6 @@ input[type="email"] {
 }
 
 button {
-  padding: 10px 20px;
   cursor: pointer;
 }
 

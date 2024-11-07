@@ -1,60 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-
-:root {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Regular.woff2') format('woff2'),
+    url('/fonts/DMSans-Regular.ttf') format('truetype');
   font-weight: 400;
-
-  color: var(--black);
-  background-color: var(--light-grey);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  font-style: normal;
+  font-display: swap;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Medium.woff2') format('woff2'),
+    url('/fonts/DMSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Italic.woff2') format('woff2'),
+    url('/fonts/DMSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
-a {
-  color: currentColor;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
+html,
 body {
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
+  font-family: 'DM Sans', Roboto, sans-serif;
   margin: 0;
 }
 
 main {
-  flex-grow: 1;
+  background-color: var(--light-gray);
+}
+
+* {
+  box-sizing: border-box;
 }
