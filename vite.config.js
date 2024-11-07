@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: [...glob.sync('./src/*.html'), ...glob.sync('./src/js/**/*.js')],
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -22,9 +22,9 @@ export default defineConfig(({ command }) => {
           },
           entryFileNames: chunkInfo => {
             if (chunkInfo.name === 'commonHelpers') {
-              return 'commonHelpers.js';
+              return 'js/commonHelpers.js';
             }
-            return '[name].js';
+            return 'js/[name].js';
           },
           assetFileNames: assetInfo => {
             if (assetInfo.name && assetInfo.name.endsWith('.html')) {
