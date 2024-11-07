@@ -4,26 +4,77 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/body-shape/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css"
+    />
     <title>Vanilla App Template</title>
     <script type="module" crossorigin src="/body-shape/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/body-shape/assets/styles-n60Lfm3-.css">
+    <link rel="modulepreload" crossorigin href="/body-shape/assets/main-BDDHo1F8.js">
+    <link rel="modulepreload" crossorigin href="/body-shape/assets/vendor-CNNbG8jS.js">
+    <link rel="stylesheet" crossorigin href="/body-shape/assets/main-BVprgG1J.css">
   </head>
   <body>
-    <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/body-shape/assets/sprite-BZU-OxI_.svg#logo"></use>
-        </svg>
-      </a>
+    <header>
+  <div class="container header">
+    <a href="index.html" class="logo">
+      <svg class="logo">
+        <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-logo"></use>
+      </svg>
+    </a>
+
+    <nav>
       <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Favorit page</a>
+        <li>
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li>
+          <a href="favorietes.html" class="nav-link">Favorites</a>
         </li>
       </ul>
     </nav>
+
+    <ul class="social-media-links social-media-links--white">
+      <li>
+        <a
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg width="28" height="28">
+            <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg width="28" height="28">
+            <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg width="28" height="28">
+            <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <button class="burger-menu" type="button">
+      <svg class="burger">
+        <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-burger"></use>
+      </svg>
+    </button>
   </div>
 </header>
 
@@ -34,14 +85,14 @@
     <div class="hero-container">
       <div class="hero__header-group">
         <svg class="hero__icon" width="38" height="38">
-          <use href="/body-shape/assets/sprite-BZU-OxI_.svg#sun"></use>
+          <use href="/body-shape/assets/sprite-Bum3rcjr.svg#sun"></use>
         </svg>
         <h1 class="hero__title">Get <span class="hero__title-highlight">Body</span> in <br />shape, Stay healthy</h1>
         <div class="hero__deco-img">
           <img
             alt="Young women doing fitness outdoors together"
-            srcset="data:image/jpeg;base64,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 1x, /body-shape/assets/hero-img-small-desk@2x-B-XnZsOG.jpg 2x"
-            src="data:image/jpeg;base64,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"
+            srcset="data:image/jpeg;base64,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 1x, /body-shape/assets/hero-img-small-desk@2x-qKIuR2nq.jpg 2x"
+            src="data:image/jpeg;base64,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"
           />
         </div>
       </div>
@@ -49,16 +100,16 @@
         Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support.
       </p>
       <picture class="hero__image">
-        <source media="(max-width: 767px)" srcset="/body-shape/assets/hero-img-mob-Dd3HGFL9.jpg 1x, /body-shape/assets/hero-img-mob@2x-MeNpxXPk.jpg 2x" />
+        <source media="(max-width: 767px)" srcset="/body-shape/assets/hero-img-mob-CEq75wCJ.jpg 1x, /body-shape/assets/hero-img-mob@2x-C6Dijhb-.jpg 2x" />
         <source
           media="(min-width: 768px) and (max-width: 1439px)"
-          srcset="/body-shape/assets/hero-img-tab-BH2EcZMo.jpg 1x, /body-shape/assets/hero-img-tab@2x-CC-HlR0k.jpg 2x"
+          srcset="/body-shape/assets/hero-img-tab-lNWhMT3j.jpg 1x, /body-shape/assets/hero-img-tab@2x-rkYv-cay.jpg 2x"
         />
         <source
           media="(min-width: 1440px)"
-          srcset="/body-shape/assets/hero-img-desk-rbNPpY8H.jpg 1x, /body-shape/assets/hero-img-desk@2x-BUKI825N.jpg 2x"
+          srcset="/body-shape/assets/hero-img-desk-CgxCavRU.jpg 1x, /body-shape/assets/hero-img-desk@2x-jbGdR9T4.jpg 2x"
         />
-        <img src="/body-shape/assets/hero-img-mob-Dd3HGFL9.jpg" alt="Women sportswear working out outdoors 2" />
+        <img src="/body-shape/assets/hero-img-mob-CEq75wCJ.jpg" alt="Women sportswear working out outdoors 2" />
       </picture>
       <ul class="hero__tag-container">
         <li class="hero__hashtag">
@@ -86,33 +137,39 @@
       YOUR ENERGY
     </div>
 
-    <ul class="social-links">
+    <ul class="social-media-links">
       <li>
-        <a href="https://www.facebook.com/goITclub/" target="_blank"
-          ><img
-            src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='43'%20height='43'%20rx='9.5'%20stroke='%23F4F4F4'%20stroke-opacity='0.1'/%3e%3cg%20opacity='0.8'%3e%3cpath%20d='M25.0804%2012.0601C25.2904%2012.0601%2025.5004%2012.0601%2025.9204%2012.0601V15.2101C25.7104%2015.2101%2025.2904%2015.2101%2024.8704%2015.2101C24.4504%2015.2101%2024.0304%2015.2101%2023.8204%2015.4201C23.6104%2015.6301%2023.6104%2015.8401%2023.6104%2016.3301C23.6104%2016.7501%2023.6104%2017.0301%2023.6104%2017.4501H25.9204V20.1101H23.6104V31.6601H20.0404V20.0401H18.1504V17.3801H20.0404V16.4701C20.0404%2014.9301%2020.2504%2013.8101%2020.6704%2013.3201C21.3004%2012.4101%2022.5604%2011.9901%2024.4504%2011.9901C24.6604%2012.0601%2024.8704%2012.0601%2025.0804%2012.0601Z'%20fill='%23F4F4F4'/%3e%3c/g%3e%3c/svg%3e"
-            alt="Facebook"
-            onmouseover="this.src='./img/facebook_hover.svg'"
-            onmouseout="this.src='./img/facebook.svg'"
-        /></a>
+        <a
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg width="28" height="28">
+            <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-facebook"></use>
+          </svg>
+        </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/goitclub/" target="_blank"
-          ><img
-            src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='43'%20height='43'%20rx='9.5'%20stroke='%23F4F4F4'%20stroke-opacity='0.1'/%3e%3cg%20opacity='0.8'%3e%3cpath%20d='M33.1277%2017.4115C33.114%2016.4715%2032.9398%2015.5388%2032.6065%2014.6596C32.0231%2013.1583%2030.8352%2011.9711%2029.3313%2011.3899C28.4618%2011.0633%2027.5426%2010.8882%2026.6122%2010.8683C25.4155%2010.815%2025.0361%2010.8%2021.9986%2010.8C18.961%2010.8%2018.5716%2010.8%2017.3837%2010.8683C16.4545%2010.8882%2015.5353%2011.0633%2014.6658%2011.3899C13.162%2011.9711%2011.9728%2013.1583%2011.3907%2014.6596C11.0635%2015.5277%2010.8869%2016.4454%2010.8695%2017.373C10.816%2018.5689%2010.7998%2018.9477%2010.7998%2021.9802C10.7998%2025.0127%2010.7998%2025.4002%2010.8695%2026.5873C10.8881%2027.5162%2011.0635%2028.4327%2011.3907%2029.3032C11.974%2030.8033%2013.162%2031.9905%2014.6671%2032.5717C15.5328%2032.9095%2016.452%2033.1007%2017.385%2033.1305C18.5828%2033.1839%2018.9622%2033.2001%2021.9998%2033.2001C25.0374%2033.2001%2025.4267%2033.2001%2026.6146%2033.1305C27.5438%2033.1119%2028.4631%2032.9368%2029.3338%2032.6102C30.8377%2032.0278%2032.0256%2030.8406%2032.609%2029.3405C32.9361%2028.4712%2033.1115%2027.5547%2033.1301%2026.6246C33.1836%2025.43%2033.1998%2025.0512%2033.1998%2022.0174C33.1973%2018.9849%2033.1973%2018.5999%2033.1277%2017.4115ZM21.9911%2027.7149C18.8142%2027.7149%2016.2406%2025.1456%2016.2406%2021.974C16.2406%2018.8024%2018.8142%2016.233%2021.9911%2016.233C25.1655%2016.233%2027.7416%2018.8024%2027.7416%2021.974C27.7416%2025.1456%2025.1655%2027.7149%2021.9911%2027.7149ZM27.9705%2017.3594C27.2279%2017.3594%2026.6296%2016.7608%2026.6296%2016.0207C26.6296%2015.2805%2027.2279%2014.682%2027.9705%2014.682C28.7106%2014.682%2029.3102%2015.2805%2029.3102%2016.0207C29.3102%2016.7608%2028.7106%2017.3594%2027.9705%2017.3594Z'%20fill='%23F4F4F4'/%3e%3cpath%20d='M21.9928%2025.4789C23.9277%2025.4789%2025.4963%2023.9104%2025.4963%2021.9754C25.4963%2020.0405%2023.9277%2018.4719%2021.9928%2018.4719C20.0578%2018.4719%2018.4893%2020.0405%2018.4893%2021.9754C18.4893%2023.9104%2020.0578%2025.4789%2021.9928%2025.4789Z'%20fill='%23F4F4F4'/%3e%3c/g%3e%3c/svg%3e"
-            alt="Instagram"
-            onmouseover="this.src='./img/instagram_hover.svg'"
-            onmouseout="this.src='./img/instagram.svg'"
-        /></a>
+        <a
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg width="28" height="28">
+            <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-instagram"></use>
+          </svg>
+        </a>
       </li>
       <li>
-        <a href="https://www.youtube.com/c/GoIT" target="_blank"
-          ><img
-            src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='43'%20height='43'%20rx='9.5'%20stroke='%23F4F4F4'%20stroke-opacity='0.1'/%3e%3cg%20opacity='0.8'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M29.2104%2013.2499C28.0203%2013.1799%2025.5703%2013.1099%2021.8604%2013.1099H21.3703C17.8003%2013.1099%2015.4204%2013.1799%2014.2304%2013.3199C12.6204%2013.4599%2011.5003%2013.8799%2010.8703%2014.4399C10.3103%2014.9299%209.89036%2015.8399%209.75036%2017.0299C9.68036%2017.7999%209.61035%2019.4099%209.61035%2021.8599V22.2099C9.61035%2024.5199%209.68034%2026.1299%209.82034%2026.8999C10.0303%2028.0199%2010.3804%2028.8599%2011.0804%2029.3499C11.7804%2029.9099%2012.9704%2030.2599%2014.6504%2030.3999C15.8404%2030.4699%2018.2904%2030.5399%2022.0004%2030.5399H22.4904C26.0604%2030.5399%2028.4404%2030.4699%2029.6304%2030.3299C31.2404%2030.1899%2032.3604%2029.7699%2032.9904%2029.2099C33.5504%2028.7199%2033.9703%2027.8099%2034.1103%2026.6199C34.1803%2025.8499%2034.2504%2024.2399%2034.2504%2021.7899V21.4399C34.2504%2019.1299%2034.1804%2017.5199%2034.0404%2016.7499C33.8304%2015.6299%2033.4804%2014.7899%2032.7804%2014.2999C32.0804%2013.7399%2030.8904%2013.3899%2029.2104%2013.2499ZM26.4804%2021.8599L18.7804%2026.4799V17.2399L26.4804%2021.8599Z'%20fill='%23F4F4F4'/%3e%3c/g%3e%3c/svg%3e"
-            alt="YouTube"
-            onmouseover="this.src='./img/youtube_hover.svg'"
-            onmouseout="this.src='./img/youtube.svg'"
-        /></a>
+        <a
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg width="28" height="28">
+            <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-youtube"></use>
+          </svg>
+        </a>
       </li>
     </ul>
 
@@ -120,14 +177,24 @@
 
     <div class="subscription-form">
       <p>Subscribe and learn about new exercises!</p>
-      <input type="email" id="email" placeholder="Email" pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required />
+      <input
+        type="email"
+        id="email"
+        placeholder="Email"
+        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        required
+      />
       <button id="send-button">Send</button>
     </div>
 
     <div class="footer-links">
-      <a href="https://goit.global/ua/privacy-policy/" target="_blank">Privacy Policy</a>
+      <a href="https://goit.global/ua/privacy-policy/" target="_blank"
+        >Privacy Policy</a
+      >
       <span>/</span>
-      <a href="https://goit.global/ua/terms-of-use/" target="_blank">Terms of Service</a>
+      <a href="https://goit.global/ua/terms-of-use/" target="_blank"
+        >Terms of Service</a
+      >
     </div>
   </div>
   <div class="footer-bottom">
@@ -135,6 +202,53 @@
   </div>
 </footer>
 
+    <div class="menu-backdrop"></div>
+<div class="menu">
+  <button class="close-menu-button"></button>
+  <nav>
+    <ul class="mobile-nav-list">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="favorietes.html">Favorites</a>
+      </li>
+    </ul>
+  </nav>
+  <ul class="social-media-links">
+    <li>
+      <a
+        href="https://www.facebook.com/goITclub/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <svg width="28" height="28">
+          <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-facebook"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/goitclub/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <svg width="28" height="28">
+          <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-instagram"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/c/GoIT" target="_blank" rel="noreferrer">
+        <svg width="28" height="28">
+          <use href="/body-shape/assets/sprite-Bum3rcjr.svg#icon-youtube"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
   </body>
 </html>
