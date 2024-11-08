@@ -1,0 +1,2 @@
+import{g as u}from"./assets/api-URR1Z_AP.js";import"./assets/vendor-CNNbG8jS.js";async function c(){try{const t=await u();if(console.log("Quote response:",t),t){const n=t.quote,r=t.author,e=document.querySelector(".quote-text"),o=document.querySelector(".quote-author");e&&o&&(e.textContent=n,o.textContent=`— ${r}`)}else console.log("Failed to load quote of the day.")}catch(t){console.error("Error fetching quote of the day:",t)}}document.addEventListener("DOMContentLoaded",c);
+//# sourceMappingURL=favorites.js.map
