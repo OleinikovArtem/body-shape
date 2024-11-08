@@ -1,3 +1,6 @@
+import 'izitoast/dist/css/iziToast.min.css';
+
+// TODO: move it to js/burger.js
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.burger-menu');
   const menu = document.querySelector('.menu');

@@ -1,3 +1,5 @@
+import iziToast from 'izitoast';
+
 import { subscribe } from './api.js'; // Adjust the path as necessary
 
 const sendBtn = document.getElementById('send-button');
