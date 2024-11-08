@@ -4,7 +4,6 @@ import { getQuote, getExerciseById } from './api.js';
 async function displayQuote() {
   try {
     const response = await getQuote();
-    console.log('Quote response:', response);
 
     if (response) {
       const quoteText = response.quote;
