@@ -2,20 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="#" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/favorites.css" />
-    <title>Your Energy</title>
+    <title>Your Energy - Favorites</title>
   </head>
   <body>
     <load src="./partials/header.html" />
     <main>
       <div class="container">
-        <h1 class="favorites-title">Favorites</h1>
+        <h1 class="favorites_title">Favorites</h1>
       </div>
+      <section class="favorites-section container">
+        <div class="exercises_side">
+          <!-- Quote of the Day -->
+          <div class="exercises_quote">
+            <div class="exercises_quote-header">
+              <svg class="quote-icon" width="20" height="20">
+                <use href="./img/icons.svg#icon-running-stick"></use>
+              </svg>
+              <h3>Quote of the day</h3>
+              <svg class="quote-commas" width="20" height="20">
+                <use href="./img/icons.svg#icon-inverted-commas"></use>
+              </svg>
+            </div>
+            <p class="quote-text">Here will be the quote text</p>
+            <p class="quote-author"></p>
+          </div>
+
+          <!-- Контейнер для розміщення поруч -->
+          <div class="exercises_text-banner">
+            <!-- Daily Norm of Sports -->
+            <div class="exercises_text">
+              <div class="exercises_text-icon-wrap">
+                <svg class="exercises_text-icon" width="20" height="20">
+                  <use href="./img/icons.svg#icon-dumbbell"></use>
+                </svg>
+              </div>
+              <h3>110 min</h3>
+              <p>Daily norm of sports</p>
+            </div>
+
+            <!-- Placeholder Image -->
+            <div class="exercises_banner-m">
+              <img src="./img/banner-m.png" alt="Placeholder Image" />
+            </div>
+          </div>
+        </div>
+
+        <!-- List of Favorite Exercises -->
+        <div class="exercises_content-wrap">
+          <ul class="favorites-list exercises_content">
+            <!-- Dynamic exercise cards will be inserted here -->
+          </ul>
+        </div>
+      </section>
     </main>
     <load src="./partials/mobile-menu.html" />
     <script type="module" src="./main.js"></script>
   </body>
+  <script type="module" src="./js/favorites.js"></script>
 </html>
