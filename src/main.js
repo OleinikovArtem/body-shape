@@ -1,4 +1,5 @@
 import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from 'izitoast';
 import { getQuote } from './js/functions';
 
 // TODO: move it to js/burger.js
@@ -37,11 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const quoteObj = await getQuote();
-    document.querySelector('.quote-content .quote').textContent =
+    document.querySelector('.quote-content .quote-text').textContent =
       quoteObj.quote;
     document.querySelector('.quote-content .author').textContent =
       quoteObj.author;
   } catch (e) {
-    // toast error
+    iziToast.error({
+      title: 'Error',
+      message: 'Failed to load quote',
+    });
   }
 });
