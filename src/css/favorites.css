@@ -150,9 +150,26 @@ h3 {
   color: rgba(244, 244, 244, 0.6);
 }
 
+.favorites-list {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
 @media screen and (min-width: 768px) {
   .favorites-section {
+    flex-direction: column;
     gap: 40px;
+    width: 100%;
+  }
+
+  .exercises_content-wrap {
+    width: 100%;
+  }
+
+  .favorites-list {
+    grid-template-columns: 1fr 1fr;
     width: 100%;
   }
 
@@ -173,11 +190,15 @@ h3 {
 
 @media screen and (min-width: 1200px) {
   .favorites-section {
-    display: flex;
     flex-direction: row;
     gap: 40px;
     align-items: flex-start;
     min-height: 100vh;
+  }
+
+  .favorites-list {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 
   .exercises_side {
@@ -190,8 +211,7 @@ h3 {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 114px;
-    height: auto; /* Скасовує повну висоту */
+    height: auto;
   }
 
   .empty-favorites {
@@ -202,7 +222,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: flex-start; /* Вирівнювання за висотою */
+    align-self: flex-start;
     margin-top: auto;
   }
 }

@@ -61,7 +61,45 @@ async function displayFavoriteExercises() {
 function createExerciseCardHtml(exercise) {
   return `
     <li class="exercises_item" id="${exercise._id}">
-      <div">Card-exercise
+      <div class="exercise-card-header">
+        <div class="card-workout">
+          <div class="card-workout-logo card-text-logo">Workout</div>
+          <div class="workout-logo-addon text-usual">${getLogoSvg(
+            true,
+            exercise._id,
+            exercise.rating || 0
+          )}</div>
+        </div>
+        <div class="card-start">
+          <div class="card-start-name usual-text">Start</div>
+          <div class="card-start-arrow">${svg.arrow}</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="card-body-logo">${svg.runner}</div>
+        <div class="card-body-name card-text-name">
+          ${capitalize(exercise.name)}
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="card-info card-text-info">
+          <span class="info-item-name">Burned calories: </span>
+          <span class="long-text">
+            ${exercise.burnedCalories || 0} / ${exercise.time || 0} min
+          </span>
+        </div>
+        <div class="card-info card-text-info">
+          <span class="info-item-name">Category: </span>
+          <span class="long-text">${capitalize(
+            exercise.categoryName || ''
+          )}</span>
+        </div>
+        <div class="card-info card-text-info">
+          <span class="info-item-name">Target: </span>
+          <span class="long-text">${capitalize(exercise.target || '')}</span>
+        </div>
       </div>
     </li>
   `;
@@ -70,8 +108,10 @@ function createExerciseCardHtml(exercise) {
 // Функція для налаштування кнопок видалення вправ
 function setupRemoveFavoriteButtons() {
   document.addEventListener('click', event => {
-    if (event.target.classList.contains('remove-favorite-btn')) {
-      const exerciseId = event.target.getAttribute('data-id');
+    if (event.target.closest('.recycle-bin')) {
+      const exerciseId = event.target
+        .closest('.recycle-bin')
+        .getAttribute('data-card');
       removeFavoriteExercise(exerciseId);
       displayFavoriteExercises(); // Оновлюємо список після видалення
     }
@@ -90,3 +130,28 @@ document.addEventListener('DOMContentLoaded', () => {
   displayFavoriteExercises();
   setupRemoveFavoriteButtons();
 });
+
+/*-----------------------------------------------------------*/
+
+function capitalize(text) {
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : '';
+}
+
+function getLogoSvg(isFavorites, id) {
+  return isFavorites ? svg.recycleBin.replace('CARD_ID', id) : svg.rating;
+}
+
+const svg = {
+  recycleBin: `
+    <svg class="card-icon recycle-bin" data-card="CARD_ID" width="16" height="16">
+        <use href="./img/icons.svg#icon-remove" data-card="CARD_ID"></use>
+    </svg>`,
+  arrow: `
+    <svg class="card-icon" width="16" height="16">
+        <use href="./img/icons.svg#icon-arrow"></use>
+    </svg>`,
+  runner: `
+    <svg class="card-icon" width="24" height="24">
+        <use href="./img/icons.svg#icon-running-stick"></use>
+    </svg>`,
+};
