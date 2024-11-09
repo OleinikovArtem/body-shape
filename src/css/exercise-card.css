@@ -1,7 +1,7 @@
 .exercises_item {
   display: flex;
   flex-direction: column;
-  background-color: #f8f8f8;
+  background-color: var(--white);
   padding: 16px;
   border-radius: 15px;
 }
@@ -24,7 +24,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border: 1px solid #242424;
+  border: 1px solid var(--dark-gray);
   border-radius: 15px;
 }
 
@@ -62,9 +62,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #242424;
+  background-color: var(--dark-gray);
   border-radius: 50%;
-  border: 5px solid #242424;
+  border: 5px solid var(--dark-gray);
 }
 
 .card-footer {
@@ -76,13 +76,13 @@
 }
 
 .info-item-name {
-  color: #36363640;
+  color: var(--backdrop);
   font-size: 12px;
 }
 
 .card-icon {
-  stroke: #242424;
-  fill: #f8f8f8;
+  stroke: var(--dark-gray);
+  fill: var(--white);
 }
 
 .card-info {
@@ -96,4 +96,8 @@
   white-space: nowrap;
   overflow: hidden;
   /* text-overflow: ellipsis; */
+}
+
+.card-text-info {
+  font-size: 12px;
 }
