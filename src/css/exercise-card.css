@@ -1,0 +1,99 @@
+.exercises_item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  padding: 16px;
+  border-radius: 15px;
+}
+
+.exercise-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.card-workout {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.card-workout-logo {
+  display: inline-flex;
+  padding: 5px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #242424;
+  border-radius: 15px;
+}
+
+.workout-logo-addon {
+  display: flex;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card-start {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-start-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card-body-name {
+  font-size: 24px;
+  font-style: normal;
+}
+
+.card-body-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
+  border-radius: 50%;
+  border: 5px solid #242424;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: start;
+  align-content: center;
+}
+
+.info-item-name {
+  color: #36363640;
+  font-size: 12px;
+}
+
+.card-icon {
+  stroke: #242424;
+  fill: #f8f8f8;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.long-text {
+  width: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+}
