@@ -4,4 +4,16 @@
   --light-gray: rgba(244, 244, 244, 1);
   --backdrop: rgba(4, 4, 4, 0.4);
   --white: rgb(255, 255, 255);
+
+  --color-black: #242424;
+  --color-white: #f4f4f4;
+  --color-white-secondary: #ffffff;
+  --color-light-grey: #d4d4d4;
+  --color-light-grey-secondary: #c6cdd1;
+  --color-yellow: #eea10c;
+
+  --color-valid: #4dc274;
+  --color-invalid: #ee323d;
+
+  --transition-dur-and-func: 750ms cubic-bezier(0.4, 0, 0.2, 1);
 }

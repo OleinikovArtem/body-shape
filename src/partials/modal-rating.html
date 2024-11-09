@@ -1,0 +1,70 @@
+<div class="modal-rating overlay is-hidden">
+  <div class="rating-container">
+    <button type="button" class="rating-close-btn">
+      <svg class="rating-icon-close" width="12" height="12">
+        <use href="../img/sprite.svg#icon-menu-mobile-close"></use>
+      </svg>
+    </button>
+
+    <div class="rating-wrapper">
+      <form action="#" class="form form_margin">
+        <div class="form__item">
+          <div class="form__label">Rating</div>
+          <div class="rating rating_set">
+            <div class="rating__value">0.0</div>
+            <div class="rating__body">
+              <div class="rating__active"></div>
+              <div class="rating__items">
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="1"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="2"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="3"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="4"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  class="rating__item"
+                  value="5"
+                  name="rating"
+                />
+              </div>
+            </div>
+          </div>
+
+          <input
+            class="rating-email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+
+          <textarea
+            class="rating-comment"
+            name="comment"
+            placeholder="Your comment"
+          ></textarea>
+        </div>
+        <button class="form__btn btn" type="submit" disabled>Send</button>
+      </form>
+    </div>
+  </div>
+</div>
