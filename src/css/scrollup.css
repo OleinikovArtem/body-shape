@@ -1,0 +1,43 @@
+/* Общие стили для обеих кнопок */
+.back-to-top-large,
+.back-to-top-small {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* По умолчанию кнопки скрыты */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Большая кнопка для десктопа */
+.back-to-top-large {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* Маленькая кнопка для мобильных устройств */
+.back-to-top-small {
+  width: 40px;
+  height: 40px;
+}
+
+
+/* Показ большой кнопки на экранах от 768px */
+@media screen and (min-width: 768px) {
+  .back-to-top-large.visible {
+    display: flex;
+  }
+}
+
+/* Показ маленькой кнопки на экранах до 768px */
+@media screen and (max-width: 767px) {
+  .back-to-top-small.visible {
+    display: flex;
+  }
+}
