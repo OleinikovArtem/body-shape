@@ -21,7 +21,6 @@ searchInput.addEventListener('keydown', function (event) {
 
 async function onSearch(event) {
   const { filter, name } = JSON.parse(localStorage.getItem('paramSearch'));
-
   const searchQuery = searchInput.value.trim();
 
   if (searchQuery === '') {
@@ -30,7 +29,7 @@ async function onSearch(event) {
 
   try {
     const data = await apiService.getSearch(filter, name, searchQuery);
-    renderExercises(data);
+    renderExercises(data.results);
   } catch (error) {
     console.log(error);
   }
