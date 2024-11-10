@@ -16,6 +16,13 @@
 @import url('./header.css');
 @import url('./mobile-menu.css');
 @import url('./hero.css');
+@import url('./exercises-quote.css');
 @import url('./footer.css');
 @import url('./social-links.css');
+/* TODO: check these styles */
 @import url('./exercises/exercises.css');
+@import url('./exercises.css');
+
+/* Exercises and Raiting */
+@import url('./modal-exercise.css');
+@import url('./modal-rating.css');

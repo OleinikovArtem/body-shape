@@ -6,9 +6,9 @@ h3 {
   color: #242424;
   font-size: 28px;
   line-height: 1.35;
-  letter-spacing: -2px;
-  margin-bottom: 20px;
-  font-weight: bold;
+  letter-spacing: -1px;
+  font-weight: 500;
+  padding-top: 98px;
 }
 
 .favorites-section {
@@ -33,7 +33,7 @@ h3 {
 }
 
 .exercises_quote {
-  background-color: #333;
+  background-color: var(--dark-gray);
   color: white;
   padding: 40px;
   border-radius: 20px;
@@ -68,6 +68,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  stroke: var(--dark-gray);
 }
 
 .quote-commas {
@@ -77,7 +78,7 @@ h3 {
 }
 
 .exercises_text {
-  background-color: #f8f8f8;
+  background-color: var(--white);
   border-radius: 8px;
   text-align: left;
   width: 100%;
@@ -89,8 +90,14 @@ h3 {
   justify-content: center;
 }
 
-.exercises_text h3,
+.exercises_text h3 {
+  font-size: 24px;
+  margin: 0;
+  line-height: 1.33;
+}
+
 .exercises_text p {
+  color: var(--backdrop);
   margin: 0;
 }
 
@@ -140,15 +147,41 @@ h3 {
 
 .exercises_text,
 .exercises_banner-m {
-  background-color: #f8f8f8;
   border-radius: 8px;
   text-align: left;
   box-sizing: border-box;
 }
 
+.quote-text {
+  color: rgba(244, 244, 244, 0.6);
+}
+
+.favorites-list {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+.empty-favorites {
+  padding-top: 20px;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .favorites-section {
+    flex-direction: column;
     gap: 40px;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .exercises_content-wrap {
+    width: 100%;
+    position: relative;
+  }
+
+  .favorites-list {
+    grid-template-columns: 1fr 1fr;
     width: 100%;
   }
 
@@ -165,15 +198,68 @@ h3 {
   .exercises_banner-m {
     width: 50%;
   }
+
+  .empty-favorites {
+    text-align: center;
+    color: #242424;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 132px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-  .exercises_side {
-    width: 494px;
+  .favorites-section {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    min-height: 100vh;
   }
 
-  .exercises_text,
-  .exercises_banner-m {
-    width: 239px;
+  .favorites-list {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .exercises_side {
+    width: 954px;
+  }
+
+  .exercises_content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .favorites-list:empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .empty-favorites {
+    text-align: center;
+    color: #242424;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

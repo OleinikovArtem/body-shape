@@ -1,5 +1,11 @@
 import 'izitoast/dist/css/iziToast.min.css';
-import './js/exercises.js'
+
+import './js/api-service';
+import './js/filters';
+import './js/modal-exercises';
+import './js/modal-rating';
+import './js/exercises';
+
 // TODO: move it to js/burger.js
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.burger-menu');

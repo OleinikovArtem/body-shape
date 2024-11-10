@@ -10,7 +10,7 @@ const span = document.querySelector('.exercises__span');
 const text = document.querySelector('.exercises__text');
 let currentPage = 1;
 
-listItem.addEventListener('click', onCardClick);
+listItem?.addEventListener('click', onCardClick);
 
 async function onCardClick(event) {
   if (!event.target.closest('.filters__item')) {
@@ -127,6 +127,7 @@ async function setCurrentPage(filter, name, i) {
   } catch (error) {
     console.log(error);
   }
+  handleActivePageNumber();
   scrollToTop();
 }
 

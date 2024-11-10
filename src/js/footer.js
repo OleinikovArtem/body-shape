@@ -1,7 +1,8 @@
 import iziToast from 'izitoast';
 
-import { subscribe } from './api.js'; // Adjust the path as necessary
+import ApiService from './api.js'; // Adjust the path as necessary
 
+const apiService = new ApiService();
 const sendBtn = document.getElementById('send-button');
 const emailInput = document.getElementById('email');
 
@@ -26,7 +27,7 @@ function submitForm() {
 
   const subscriptionData = { email };
 
-  subscribe(email)
+  apiService.subscribe(email)
     .then(response => {
       // Handle the response based on the status code
       if (response.status === 201) {

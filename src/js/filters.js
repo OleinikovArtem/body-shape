@@ -1,6 +1,7 @@
 import APIService from './api';
 const apiService = new APIService();
 const list = document.querySelector('.js-list');
+
 const paginationButtons = document.getElementById('pagination-numbers');
 let currentPage = 1;
 
@@ -21,6 +22,7 @@ async function getFiltersExercises(params, currentPage) {
 }
 
 function displayExercises(results) {
+  if (!list) return;
   list.innerHTML = '';
 
   if (results.length === 0) {
@@ -37,6 +39,8 @@ function displayExercises(results) {
   <li class="filters__item">
     <img class="filters__img-first" src="${imgURL}"></img>
     <div class="filters__wrapper-first">
+    <h2 class="filters__title-first">${filter}</h2>
+    <p class="filters__text-first">${name}</p>
     <h2 class="filters__title-first">${capitalize(name)}</h2>
     <p class="filters__text-first">${filter}</p>
     </div>
@@ -64,11 +68,11 @@ function capitalize(val) {
 
   const words = val.split(' ');
   const capitalizedWords = words.map(capitalizeFirstLetter);
-  const result = capitalizedWords.join(' ');
-  return result;
+  return capitalizedWords.join(' ');
 }
 
 export function setupPagination({ results, totalPages }) {
+  if (!paginationButtons) return;
   paginationButtons.innerHTML = '';
 
   if (totalPages <= 1) return;
@@ -102,6 +106,7 @@ const handleActivePageNumber = currentPage => {
     if (page + 1 === currentPage) {
       button.classList.add('active-btn');
     }
+    scrollToTop();
   });
 };
 
@@ -110,4 +115,4 @@ function scrollToTop() {
     top: 830,
     behavior: 'auto',
   });
-}
+};
