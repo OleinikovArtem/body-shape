@@ -20,7 +20,7 @@ async function getQuote() {
     );
 
     return quoteData;
-  } catch (error) {
+  } catch (error) {    
     throw new Error('Error fetching quote:', error);
   }
 }

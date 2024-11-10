@@ -2,6 +2,12 @@ import 'izitoast/dist/css/iziToast.min.css';
 import iziToast from 'izitoast';
 import { getQuote } from './js/functions';
 
+import './js/api-service';
+import './js/filters';
+import './js/modal-exercises';
+import './js/modal-rating';
+import './js/exercises';
+
 // TODO: move it to js/burger.js
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.burger-menu');
@@ -32,20 +38,4 @@ document.addEventListener('DOMContentLoaded', () => {
   menuBackdrop.addEventListener('click', toogleMenu);
   closeMenuButton.addEventListener('click', toogleMenu);
   mobileNavigation.addEventListener('click', toogleMenu);
-});
-
-// load quote
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const quoteObj = await getQuote();
-    document.querySelector('.quote-content .quote-text').textContent =
-      quoteObj.quote;
-    document.querySelector('.quote-content .author').textContent =
-      quoteObj.author;
-  } catch (e) {
-    iziToast.error({
-      title: 'Error',
-      message: 'Failed to load quote',
-    });
-  }
 });
