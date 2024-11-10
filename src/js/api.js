@@ -14,7 +14,7 @@ class APIService {
   }
 
   async getSearch(params1, params2, params3) {
-    const fullUrl = `${this.baseURL}/exercises?${params1}=${params2}&keyword=${params3}&page=1&limit=10`;
+    const fullUrl = `${this.baseURL}/exercises?${params2}=${params1}&keyword=${params3}&page=1&limit=10`;
     return this.requestGET(fullUrl);
   }
 
@@ -46,7 +46,6 @@ class APIService {
       console.error(error);
     }
   }
-  
 }
 
 export default APIService;
