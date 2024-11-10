@@ -1,5 +1,5 @@
-// import { getQuote, getExerciseById } from './api.js';
 import ApiService from './api.js';
+import { initializeMenu, initializeNavigationLinks } from './menu.js';
 const apiService = new ApiService();
 
 // Функція для відображення цитати дня
@@ -127,4 +127,6 @@ document.addEventListener('click', event => {
 document.addEventListener('DOMContentLoaded', () => {
   displayQuote();
   displayFavoriteExercises();
+  initializeMenu();
+  initializeNavigationLinks();
 });
