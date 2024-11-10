@@ -30,6 +30,11 @@ button {
   padding: 0;
 }
 
+.form__btn.modal-button {
+  border: none;
+  background: var(--color-white); 
+}
+
 img {
   display: block;
   max-width: 100%;
