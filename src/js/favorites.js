@@ -1,4 +1,5 @@
 import { getQuote, getExerciseById } from './api.js';
+import { initializeMenu, initializeNavigationLinks } from './menu.js';
 
 // Функція для відображення цитати дня
 async function displayQuote() {
@@ -125,4 +126,6 @@ document.addEventListener('click', event => {
 document.addEventListener('DOMContentLoaded', () => {
   displayQuote();
   displayFavoriteExercises();
+  initializeMenu();
+  initializeNavigationLinks();
 });
