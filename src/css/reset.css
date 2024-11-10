@@ -12,7 +12,8 @@ p:last-child {
     margin-bottom: 0;
 }
 
-ul,ol {
+ul,
+ol {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -25,6 +26,9 @@ a {
 
 button {
     cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
 }
 
 img {
@@ -32,7 +36,3 @@ img {
     max-width: 100%;
     height: auto;
 }
-
-
-
-
