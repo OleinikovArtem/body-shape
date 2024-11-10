@@ -1,70 +1,103 @@
-<footer>
-  <div class="footer-content">
-    <div class="logo" onclick="window.location.href='index.html'">
-      YOUR ENERGY
+<footer class="footer">
+  <div class="footer-container container">
+    <div class="footer-content">
+      <div class="footer-logo-and-social">
+        <a
+          href="./index.html"
+          class="footer-logo-link"
+          aria-label="YouEnergy"
+        >
+        <svg class="logo logo-footer">
+          <use href="./img/sprite.svg#icon-logo"></use>
+        </svg>
+        </a>
+
+        <ul class="footer-social-list">
+          <li class="footer-social-link">
+            <a
+              class="footer-icon"
+              href="https://www.facebook.com/goITclub/"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                class="footer-svg"
+                viewBox="0 0 32 32"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use x="0" y="0" href="./img/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-social-link">
+            <a
+              class="footer-icon"
+              href="https://www.instagram.com/goitclub/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                class="footer-svg"
+                viewBox="0 0 32 32"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use x="0" y="0" href="./img/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-social-link">
+            <a
+              class="footer-icon"
+              href="https://www.youtube.com/c/GoIT"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg
+                class="footer-svg"
+                viewBox="0 0 32 32"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use x="0" y="0" href="./img/icons.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-form">
+          <h2>Transforming  your <span class="footer-span">body</span> shape with us</h2>
+        <form class="subscribe-form" autocomplete="off">
+          <label>
+            Subscribe and learn about new exercises!
+            <input
+              type="email"
+              name="email"
+              required
+              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+              placeholder="Email"
+            />
+          </label>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
 
-    <ul class="social-media-links">
-      <li>
-        <a
-          href="https://www.facebook.com/goITclub/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <svg width="28" height="28">
-            <use href="./img/sprite.svg#icon-facebook"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.instagram.com/goitclub/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <svg width="28" height="28">
-            <use href="./img/sprite.svg#icon-instagram"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.youtube.com/c/GoIT"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <svg width="28" height="28">
-            <use href="./img/sprite.svg#icon-youtube"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-
-    <p class="slogan">Transforming your body shape with us</p>
-
-    <div class="subscription-form">
-      <p>Subscribe and learn about new exercises!</p>
-      <input
-        type="email"
-        id="email"
-        placeholder="Email"
-        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        required
-      />
-      <button id="send-button">Send</button>
+    <div class="bottom">
+        <p class="bottom-p">Your Energy. All rights reserved.</p>
+      <div class="footer-links-wrapper">
+        <ul class="footer-links">
+          <li><a class="policy" href="#">Privacy Policy /</a></li>
+          <li><a class="policy" href="#">Terms of Service</a></li>
+        </ul>
+        <p class="copyright">&#169; 2023</p>
+      </div>
     </div>
 
-    <div class="footer-links">
-      <a href="https://goit.global/ua/privacy-policy/" target="_blank"
-        >Privacy Policy</a
-      >
-      <span>/</span>
-      <a href="https://goit.global/ua/terms-of-use/" target="_blank"
-        >Terms of Service</a
-      >
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>Your Energy. All rights reserved. ©2024</p>
   </div>
 </footer>
