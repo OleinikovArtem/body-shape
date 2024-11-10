@@ -289,6 +289,7 @@
 .quote-filters__container {
   display: flex;
   flex-direction: column;
+  padding-bottom: 132px;
 }
 
 .quote-filters__container .aside__container {
