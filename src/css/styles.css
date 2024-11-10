@@ -22,7 +22,7 @@
 /* TODO: check these styles */
 @import url('./exercises/exercises.css');
 @import url('./exercises.css');
-
+@import url('./quote.css');
 /* Exercises and Raiting */
 @import url('./modal-exercise.css');
 @import url('./modal-rating.css');
