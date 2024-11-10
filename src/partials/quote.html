@@ -1,39 +1,70 @@
-<!-- quote.html -->
-<div class="exercises_quote">
-  <div class="exercises_quote-header">
-    <svg class="quote-icon" width="20" height="20">
-      <use href="./img/icons.svg#icon-running-stick"></use>
-    </svg>
-    <h3>Quote of the day</h3>
-    <svg class="quote-commas" width="20" height="20">
-      <use href="./img/icons.svg#icon-inverted-commas"></use>
-    </svg>
-  </div>
-  <p class="quote-text">Here will be the quote text</p>
-  <p class="quote-author"></p>
-</div>
-
-<div class="exercises_text-banner">
-  <div class="exercises_text">
-    <div class="exercises_text-icon-wrap">
-      <svg class="exercises_text-icon" width="20" height="20">
-        <use href="./img/icons.svg#icon-dumbbell"></use>
+<div class="quote-container">
+  <div class="quote-card">
+    <div>
+      <svg class="quote-icon">
+        <use href=" ./img/sprite.svg#icon-running-man"></use>
       </svg>
     </div>
-    <h3>110 min</h3>
-    <p>Daily norm of sports</p>
-    <p class="text-WHO">
-      The World Health Organization recommends at least 150 minutes of
-      moderate-intensity aerobic physical activity throughout the week for
-      adults aged 18-64. However, what happens if we adjust that number to 110
-      minutes every day? While it might seem like a high number to hit,
-      dedicating 110 minutes daily to sporting activities may offer unparalleled
-      benefits to physical health, mental well-being, and overall quality of
-      life.
-    </p>
-  </div>
 
-  <div class="exercises_banner-m">
-    <img src="./img/banner-m.png" alt="Placeholder Image" />
+    <div>
+      <div class="quote-title-holder">
+        <h3 class="title">Quote of the day</h3>
+        <svg class="inverted-comas-icon">
+          <use href=" ./img/sprite.svg#icon-inverted-comas"></use>
+        </svg>
+      </div>
+      <p class="description">Loading quote...</p>
+      <p class="quote-author"></p>
+    </div>
+  </div>
+  <picture>
+    <!-- Mobile image -->
+    <source
+      media="(max-width: 767px)"
+      srcset="
+        ./img/quote/qoute-mobile.jpg    1x,
+        ./img/quote/qoute-mobile@2x.jpg 2x
+      "
+    />
+    <!-- Tablet image -->
+    <source
+      media="(min-width: 767px) and (max-width: 1439px)"
+      srcset="
+        ./img/quote/qoute-tablet.jpg    1x,
+        ./img/quote/qoute-tablet@2x.jpg 2x
+      "
+    />
+    <!-- Desktop image -->
+    <source
+      media="(min-width: 1440px)"
+      srcset="
+        ./img/quote/qoute-desktop.jpg    1x,
+        ./img/quote/qoute-desktop@2x.jpg 2x
+      "
+    />
+    <img class="quote-image" src="./img/quote/qoute-desktop.jpg" alt="girls" />
+  </picture>
+
+  <div class="quote-card white">
+    <div>
+      <svg class="quote-icon">
+        <use href="./img/sprite.svg#icon-dumb-bell"></use>
+      </svg>
+    </div>
+    <div>
+      <div class="subtitle-holder">
+        <h3 class="title">110 min</h3>
+        <h4 class="subtitle">Daily norm of sports</h4>
+      </div>
+      <p class="description truncate-text">
+        The World Health Organization recommends at least 150 minutes of
+        moderate-intensity aerobic physical activity throughout the week for
+        adults aged 18-64. However, what happens if we adjust that number to 110
+        minutes every day? While it might seem like a high number to hit,
+        dedicating 110 minutes daily to sporting activities may offer
+        unparalleled benefits to physical health, mental well-being, and overall
+        quality of life.
+      </p>
+    </div>
   </div>
 </div>

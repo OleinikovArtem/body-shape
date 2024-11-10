@@ -1,22 +1,8 @@
 import ApiService from './api.js';
 import { initializeMenu, initializeNavigationLinks } from './menu.js';
-const apiService = new ApiService();
+import { displayQuoteOfTheDay } from './quote.js';
 
-// Функція для відображення цитати дня
-async function displayQuote() {
-  try {
-    const response = await apiService.getQuote();
-    if (response) {
-      document.querySelector('.quote-text').textContent = response.quote || '';
-      document.querySelector('.quote-author').textContent =
-        response.author || '';
-    } else {
-      console.log('Failed to load quote of the day.');
-    }
-  } catch (error) {
-    console.error('Error fetching quote of the day:', error);
-  }
-}
+const apiService = new ApiService();
 
 // Функція для отримання масиву ID обраних вправ із localStorage
 function getFavoriteExerciseIds() {
@@ -38,7 +24,11 @@ async function displayFavoriteExercises() {
   if (!exerciseContainer) return;
   const favoriteIds = getFavoriteExerciseIds();
   exerciseContainer.innerHTML = favoriteIds.length
-    ? (await Promise.all(favoriteIds.map(id => apiService.getExercisesById(id))))
+    ? (
+        await Promise.all(
+          favoriteIds.map(id => apiService.getExercisesById(id))
+        )
+      )
         .map(createExerciseCardHtml)
         .join('')
     : `<li class="empty-favorites">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</li>`;
@@ -126,7 +116,7 @@ document.addEventListener('click', event => {
 
 // Ініціалізація сторінки
 document.addEventListener('DOMContentLoaded', () => {
-  displayQuote();
+  displayQuoteOfTheDay();
   displayFavoriteExercises();
   initializeMenu();
   initializeNavigationLinks();

@@ -1,0 +1,61 @@
+<div class="favorites-quote-container">
+  <div class="quote-card">
+    <div>
+      <svg class="quote-icon">
+        <use href=" ./img/sprite.svg#icon-running-man"></use>
+      </svg>
+    </div>
+
+    <div>
+      <div class="quote-title-holder">
+        <h3 class="title">Quote of the day</h3>
+        <svg class="inverted-comas-icon">
+          <use href=" ./img/sprite.svg#icon-inverted-comas"></use>
+        </svg>
+      </div>
+      <p class="description">Loading quote...</p>
+      <p class="quote-author"></p>
+    </div>
+  </div>
+
+  <div class="favorites-quote-card">
+    <svg width="20" height="20">
+      <use href="./img/sprite.svg#icon-fluent-food"></use>
+    </svg>
+    <div>
+      <h3 class="title">110 min</h3>
+      <h4 class="subtitle">Daily norm of sports</h4>
+    </div>
+  </div>
+  <picture>
+    <!-- Mobile image -->
+    <source
+      media="(max-width: 767px)"
+      srcset="
+        ./img/favorites/favorites-quote-mobile.jpg    1x,
+        ./img/favorites/favorites-quote-mobile@2x.jpg 2x
+      "
+    />
+    <!-- Tablet image -->
+    <source
+      media="(min-width: 767px) and (max-width: 1439px)"
+      srcset="
+        ./img/favorites/favorites-quote-tablet.jpg    1x,
+        ./img/favorites/favorites-quote-tablet@2x.jpg 2x
+      "
+    />
+    <!-- Desktop image -->
+    <source
+      media="(min-width: 1440px)"
+      srcset="
+        ./img/favorites/favorites-quote-desktop.jpg    1x,
+        ./img/favorites/favorites-quote-desktop@2x.jpg 2x
+      "
+    />
+    <img
+      class="favorites-quote-image"
+      src="./img/favorites/favorites-quote-desktop.jpg"
+      alt="girls"
+    />
+  </picture>
+</div>

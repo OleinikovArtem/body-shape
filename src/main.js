@@ -7,8 +7,10 @@ import './js/modal-rating';
 import './js/exercises';
 
 import { initializeMenu, initializeNavigationLinks } from './js/menu.js';
+import { displayQuoteOfTheDay } from './js/quote.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeMenu();
   initializeNavigationLinks();
+  displayQuoteOfTheDay();
 });
