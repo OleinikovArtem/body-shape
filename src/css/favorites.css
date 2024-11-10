@@ -21,6 +21,7 @@
   list-style: none;
   padding: 0;
 }
+
 .empty-favorites {
   padding-top: 20px;
   text-align: center;
@@ -47,14 +48,13 @@
     width: 100%;
     max-width: 600px;
     position: absolute;
-    top: 50%;
+    top: 78%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-top: 132px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   .favorites-section {
     display: flex;
     flex-direction: row;
@@ -86,7 +86,7 @@
     max-width: 600px;
     position: absolute;
     top: 30%;
-    left: 50%;
+    left: 66%;
     transform: translate(-50%, -50%);
   }
 }

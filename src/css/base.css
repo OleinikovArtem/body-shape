@@ -28,11 +28,9 @@
 html,
 body {
   font-family: 'DM Sans', Roboto, sans-serif;
-  margin: 0;
-}
-
-main {
+  min-height: 100vh;
   background-color: var(--light-gray);
+  margin: 0;
 }
 
 * {

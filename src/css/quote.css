@@ -1,219 +1,232 @@
-h3 {
-  font-weight: 400;
-}
-
-.exercises_quote,
-.exercises_text,
-.exercises_banner-m {
-  width: 100%;
-}
-
-.exercises_side {
-  display: flex;
-  flex-direction: column;
+.quote-container {
+  display: grid;
+  grid-template-areas:
+    'black-card'
+    'image'
+    'white-card';
   gap: 20px;
-  width: 100%;
-}
-
-.col .exercises_quote {
-  margin-bottom: 20px;
-  margin-top: 80px;
-}
-
-.exercises_quote {
-  background-color: var(--dark-gray);
-  color: white;
-  padding: 40px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
   box-sizing: border-box;
 }
 
-.exercises_quote-header {
+.favorites-content-holder .quote-container {
+  grid-template-areas:
+    'black-card'
+    'white-card'
+    'image';
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-container {
+    grid-template-areas:
+      'black-card image'
+      'white-card x';
+    grid-template-columns: 1fr 288px;
+    gap: 32px 16px;
+  }
+
+  .favorites-content-holder .quote-container {
+    grid-template-areas:
+      'black-card black-card'
+      'white-card image'
+    ;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .quote-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .quote-card {
+    width: 100%;
+    max-width: 444px;
+  }
+
+  .quote-card.white {
+    max-height: 100%;
+  }
+}
+
+.quote-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--dark-gray);
   display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  grid-area: black-card;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-card {
+    padding: 40px;
+  }
+}
+
+.quote-card.white {
+  background-color: var(--white);
+  max-height: 202px;
+  grid-area: white-card;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-card.white {
+    max-height: 249px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .quote-card.white {
+    max-height: 100%;
+  }
+}
+
+.quote-title-holder {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  margin-bottom: 8px;
 }
 
-.exercises_quote h3 {
-  margin: 0;
-  color: white;
+.quote-card .title {
+  color: var(--light-gray);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
-.quote-icon,
-.quote-commas {
-  fill: white;
+@media only screen and (min-width: 768px) {
+  .quote-card .title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+  }
+}
+
+.quote-card.white .title {
+  color: var(--dark-gray);
+}
+
+.inverted-comas-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .inverted-comas-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.quote-card.white .subtitle {
+  color: rgba(36, 36, 36, 0.60);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 2px;
+}
+
+.subtitle-holder {
+  margin-bottom: 16px;
+}
+
+.quote-card .description {
+  color: rgba(244, 244, 244, 0.60);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.quote-card.white .description {
+  color: var(--dark-gray);
+}
+
+.quote-author {
+  color: var(--light-gray);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.quote-image {
+  border-radius: 20px;
+  grid-area: image;
 }
 
 .quote-icon {
-  background-color: rgba(244, 244, 244, 0.2);
-  border-radius: 50%;
   width: 32px;
   height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  stroke: var(--dark-gray);
 }
 
-.quote-commas {
-  width: 20px;
-  height: 20px;
-  margin-left: auto;
+@media only screen and (max-width: 1439px) {
+  .truncate-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-.col .exercises_text {
-  order: 2;
-  height: 201px;
-}
-
-.exercises_text {
-  background-color: var(--white);
+.favorites-quote-card {
+  padding: 20px;
   border-radius: 20px;
-  text-align: left;
-  width: 100%;
-  height: 141px;
-  padding: 25px;
-  box-sizing: border-box;
+  background: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 16px;
+  grid-area: white-card;
 }
 
-.exercises_text h3 {
-  font-size: 24px;
-  margin: 0;
-  line-height: 1.33;
-}
-
-.exercises_text p {
-  color: var(--backdrop);
-  margin: 0;
-}
-
-.col .exercises_text-banner {
-  margin-bottom: 80px;
-}
-
-.exercises_text-banner {
-  display: flex;
-  flex-direction: column;
+.favorites-quote-container {
+  display: grid;
   gap: 20px;
+  grid-template-areas:
+    'card'
+    'white-card'
+    'image';
 }
 
-.col .exercises_text-icon-wrap {
-  background-color: var(--dark-gray);
-  max-width: 100%;
-  height: auto;
+.favorites-quote-container .quote-card {
+  grid-area: card;
+  justify-content: flex-start;
 }
 
-.exercises_text-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: white;
-  border-radius: 50%;
+@media only screen and (min-width: 768px) {
+  .favorites-quote-container {
+    grid-template-columns: calc(50% - 12px);
+    grid-template-rows: 230px 142px;
+    grid-template-areas:
+      'card card'
+      'white-card image';
+  }
 }
 
-.col .exercises_text-icon {
-  fill: var(--white);
+@media only screen and (min-width: 1440px) {
+  .favorites-quote-container .quote-card {
+    max-width: 494px;
+  }
 }
 
-.exercises_text-icon {
-  width: 20px;
-  height: 20px;
-  fill: black;
-}
-
-.col .exercises_banner-m {
-  order: 1;
-  width: 100%;
-  height: 141px;
+.favorites-quote-image {
   border-radius: 20px;
-  overflow: hidden;
-  background-color: #f8f8f8;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-area: image;
 }
 
-.exercises_banner-m {
-  width: 100%;
-  height: 141px;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #f8f8f8;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.favorites-quote-card .title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 6px;
 }
 
-.exercises_banner-m img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  padding: 0;
-  border-radius: 8px;
-}
-
-.quote-text {
-  color: rgba(244, 244, 244, 0.6);
-}
-
-.text-WHO {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@media screen and (min-width: 768px) {
-  .exercises_content-wrap {
-    width: 100%;
-    position: relative;
-  }
-
-  .exercises_side {
-    width: 100%;
-  }
-
-  .exercises_text-banner {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .col .exercises_text {
-    height: 141px;
-  }
-
-  .exercises_text,
-  .exercises_banner-m {
-    width: 50%;
-  }
-
-  .quote-col .exercises_quote {
-    margin-top: 0;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .exercises_side {
-    width: 954px;
-  }
-
-  .exercises_content-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 400px;
-    position: relative;
-  }
+.favorites-quote-card .subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(36, 36, 36, 0.6);
 }
