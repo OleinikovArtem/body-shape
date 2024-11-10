@@ -302,8 +302,9 @@
 
 @media screen and (min-width: 1440px) {
   .quote-filters__container {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
+    gap: 32px;
   }
   .quote-filters__container .aside__container {
     order: 1;
