@@ -27,8 +27,7 @@
   .favorites-content-holder .quote-container {
     grid-template-areas:
       'black-card black-card'
-      'white-card image'
-    ;
+      'white-card image';
   }
 }
 
@@ -122,7 +121,7 @@
 }
 
 .quote-card.white .subtitle {
-  color: rgba(36, 36, 36, 0.60);
+  color: rgba(36, 36, 36, 0.6);
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -134,7 +133,7 @@
 }
 
 .quote-card .description {
-  color: rgba(244, 244, 244, 0.60);
+  color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -208,7 +207,7 @@
 
 @media only screen and (min-width: 1440px) {
   .favorites-quote-container .quote-card {
-    max-width: 494px;
+    width: 494px;
   }
 }
 
