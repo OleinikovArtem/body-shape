@@ -6,15 +6,19 @@ const apiService = new ApiService();
 const sendBtn = document.getElementById('send-button');
 const emailInput = document.getElementById('email');
 
-sendBtn.addEventListener('click', submitForm);
+window.addEventListener("load", (event) => {
+  sendBtn.addEventListener('click', submitForm);
 
-emailInput.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
-    submitForm(); // Call the submitForm function if Enter key is pressed
-  }
+  emailInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      submitForm(); // Call the submitForm function if Enter key is pressed
+    }
+  });
 });
 
-function submitForm() {
+async function submitForm(event) {
+  event.preventDefault();
+  event.stopPropagation();
   const email = emailInput.value;
 
   if (!emailInput.checkValidity()) {
@@ -25,9 +29,7 @@ function submitForm() {
     return;
   }
 
-  const subscriptionData = { email };
-
-  apiService.subscribe(email)
+  apiService.postSubscriptions(email)
     .then(response => {
       // Handle the response based on the status code
       if (response.status === 201) {
@@ -46,7 +48,7 @@ function submitForm() {
     .catch(error => {
       iziToast.error({
         title: 'Error',
-        message: 'Network error. Please try again later.', // Display error message for network issues
+        message: error.response.data.message, // Display error message for network issues
       });
     });
 }
