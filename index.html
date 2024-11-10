@@ -7,16 +7,16 @@
     <title>Vanilla App Template</title>
     <script type="module" crossorigin src="/body-shape/index.js"></script>
     <link rel="modulepreload" crossorigin href="/body-shape/assets/vendor-BT7OT44q.js">
-    <link rel="modulepreload" crossorigin href="/body-shape/assets/favorites-BPdBERSP.js">
+    <link rel="modulepreload" crossorigin href="/body-shape/assets/favorites-u_Lw9_Cw.js">
+    <link rel="stylesheet" crossorigin href="/body-shape/assets/favorites-zsH7nDpt.css">
     <link rel="stylesheet" crossorigin href="/body-shape/assets/vendor-D_nxXpU-.css">
-    <link rel="stylesheet" crossorigin href="/body-shape/assets/favorites-Bl-Vz_qM.css">
   </head>
   <body>
     <header>
   <div class="container header">
     <a href="index.html" class="logo">
       <svg class="logo">
-        <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-logo"></use>
+        <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-logo"></use>
       </svg>
     </a>
 
@@ -39,7 +39,7 @@
           rel="noreferrer"
         >
           <svg width="28" height="28">
-            <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-facebook"></use>
+            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-facebook"></use>
           </svg>
         </a>
       </li>
@@ -50,7 +50,7 @@
           rel="noreferrer"
         >
           <svg width="28" height="28">
-            <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-instagram"></use>
+            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-instagram"></use>
           </svg>
         </a>
       </li>
@@ -61,7 +61,7 @@
           rel="noreferrer"
         >
           <svg width="28" height="28">
-            <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-youtube"></use>
+            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-youtube"></use>
           </svg>
         </a>
       </li>
@@ -69,7 +69,7 @@
 
     <button class="burger-menu" type="button">
       <svg class="burger">
-        <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-burger"></use>
+        <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-burger"></use>
       </svg>
     </button>
   </div>
@@ -82,7 +82,7 @@
     <div class="hero-container">
       <div class="hero__header-group">
         <svg class="hero__icon" width="38" height="38">
-          <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-sun"></use>
+          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-sun"></use>
         </svg>
         <h1 class="hero__title">Get <span class="hero__title-highlight">Body</span> in <br />shape, Stay healthy</h1>
         <div class="hero__deco-img">
@@ -137,7 +137,7 @@
         <input class="search__input" type="text" placeholder="Search" />
         <button class="search__button" type="button">
           <svg class="search__icon" width="18" height="18">
-            <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-search"></use>
+            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-search"></use>
           </svg>
         </button>
       </form>
@@ -162,43 +162,65 @@
   </div>
   <div class="quote-filters__container container">
     <div class="aside__container col quote-col">
-      <!-- quote.html -->
-<div class="exercises_quote">
-  <div class="exercises_quote-header">
-    <svg class="quote-icon" width="20" height="20">
-      <use href="/body-shape/assets/icons-DfwoJ68I.svg#icon-running-stick"></use>
-    </svg>
-    <h3>Quote of the day</h3>
-    <svg class="quote-commas" width="20" height="20">
-      <use href="/body-shape/assets/icons-DfwoJ68I.svg#icon-inverted-commas"></use>
-    </svg>
-  </div>
-  <p class="quote-text">Here will be the quote text</p>
-  <p class="quote-author"></p>
-</div>
-
-<div class="exercises_text-banner">
-  <div class="exercises_text">
-    <div class="exercises_text-icon-wrap">
-      <svg class="exercises_text-icon" width="20" height="20">
-        <use href="/body-shape/assets/icons-DfwoJ68I.svg#icon-dumbbell"></use>
+      <div class="quote-container">
+  <div class="quote-card">
+    <div>
+      <svg class="quote-icon">
+        <use href=" ./img/sprite.svg#icon-running-man"></use>
       </svg>
     </div>
-    <h3>110 min</h3>
-    <p>Daily norm of sports</p>
-    <p class="text-WHO">
-      The World Health Organization recommends at least 150 minutes of
-      moderate-intensity aerobic physical activity throughout the week for
-      adults aged 18-64. However, what happens if we adjust that number to 110
-      minutes every day? While it might seem like a high number to hit,
-      dedicating 110 minutes daily to sporting activities may offer unparalleled
-      benefits to physical health, mental well-being, and overall quality of
-      life.
-    </p>
-  </div>
 
-  <div class="exercises_banner-m">
-    <img src="/body-shape/assets/banner-m-CsbYpSB5.png" alt="Placeholder Image" />
+    <div>
+      <div class="quote-title-holder">
+        <h3 class="title">Quote of the day</h3>
+        <svg class="inverted-comas-icon">
+          <use href=" ./img/sprite.svg#icon-inverted-comas"></use>
+        </svg>
+      </div>
+      <p class="description">Loading quote...</p>
+      <p class="quote-author"></p>
+    </div>
+  </div>
+  <picture>
+    <!-- Mobile image -->
+    <source
+      media="(max-width: 767px)"
+      srcset="/body-shape/assets/qoute-mobile-CPP46gBM.jpg 1x, /body-shape/assets/qoute-mobile@2x-BN_WvWna.jpg 2x"
+    />
+    <!-- Tablet image -->
+    <source
+      media="(min-width: 767px) and (max-width: 1439px)"
+      srcset="/body-shape/assets/qoute-tablet-DV8hU1TX.jpg 1x, /body-shape/assets/qoute-tablet@2x-DXqywC4S.jpg 2x"
+    />
+    <!-- Desktop image -->
+    <source
+      media="(min-width: 1440px)"
+      srcset="/body-shape/assets/qoute-desktop-BqZUJP1D.jpg 1x, /body-shape/assets/qoute-desktop@2x-BXt4fF_U.jpg 2x"
+    />
+    <img class="quote-image" src="/body-shape/assets/qoute-desktop-BqZUJP1D.jpg" alt="girls" />
+  </picture>
+
+  <div class="quote-card white">
+    <div>
+      <svg class="quote-icon">
+        <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-dumb-bell"></use>
+      </svg>
+    </div>
+    <div>
+      <div class="subtitle-holder">
+        <h3 class="title">110 min</h3>
+        <h4 class="subtitle">Daily norm of sports</h4>
+      </div>
+      <p class="description truncate-text">
+        The World Health Organization recommends at least 150 minutes of
+        moderate-intensity aerobic physical activity throughout the week for
+        adults aged 18-64. However, what happens if we adjust that number to 110
+        minutes every day? While it might seem like a high number to hit,
+        dedicating 110 minutes daily to sporting activities may offer
+        unparalleled benefits to physical health, mental well-being, and overall
+        quality of life.
+      </p>
+    </div>
   </div>
 </div>
 
@@ -306,7 +328,7 @@
           aria-label="YouEnergy"
         >
         <svg class="logo logo-footer">
-          <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-logo"></use>
+          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-logo"></use>
         </svg>
         </a>
 
@@ -422,7 +444,7 @@
         rel="noreferrer"
       >
         <svg width="28" height="28">
-          <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-facebook"></use>
+          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-facebook"></use>
         </svg>
       </a>
     </li>
@@ -433,14 +455,14 @@
         rel="noreferrer"
       >
         <svg width="28" height="28">
-          <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-instagram"></use>
+          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-instagram"></use>
         </svg>
       </a>
     </li>
     <li>
       <a href="https://www.youtube.com/c/GoIT" target="_blank" rel="noreferrer">
         <svg width="28" height="28">
-          <use href="/body-shape/assets/sprite-TGb3VMBB.svg#icon-youtube"></use>
+          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-youtube"></use>
         </svg>
       </a>
     </li>
