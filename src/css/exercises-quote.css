@@ -1,0 +1,121 @@
+.exercises-section {
+  margin: 32px;
+}
+
+.quote-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* quote card */
+.quote {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 18px;
+  background-color: var(--dark-gray);
+  color: var(--white);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.quote-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+}
+
+.quote-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  width: 100%;
+}
+
+.quote-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: rgba(244, 244, 244, 0.6);
+}
+
+/* 110 min card */
+.daily-norm {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 18px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: var(--white);
+}
+
+.daily-norm-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.daily-norm-content .title {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.daily-norm-content .sub-title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: rgba(36, 36, 36, 0.6);
+}
+
+.daily-norm-content .description {
+  margin-top: 16px;
+}
+
+/* quote block image */
+.quote-image img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+@media screen and (min-width: 375px) {
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) {
+  .quote-block {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .quote,
+  .daily-norm {
+    max-width: 400px;
+  }
+
+  .quote-image {
+    max-width: 288px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1440px) {
+  .quote-block {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .quote,
+  .daily-norm,
+  .quote-image {
+    max-width: 444px;
+  }
+}

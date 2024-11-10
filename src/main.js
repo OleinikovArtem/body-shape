@@ -1,4 +1,6 @@
 import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from 'izitoast';
+import { getQuote } from './js/functions';
 
 import './js/api-service';
 import './js/filters';
@@ -37,6 +39,3 @@ document.addEventListener('DOMContentLoaded', () => {
   closeMenuButton.addEventListener('click', toogleMenu);
   mobileNavigation.addEventListener('click', toogleMenu);
 });
-
-
-
