@@ -58,8 +58,7 @@ function textExercises(results) {
 
 export function renderExercises(results) {
   listItem.innerHTML = '';
-  const markup = results
-    .map(({ _id, rating, name, burnedCalories, bodyPart, target }) => {
+  const markup = results?.map(({ _id, rating, name, burnedCalories, bodyPart, target }) => {
       return `
       <li class="filters__item-card">
         <div class="card__wrap">

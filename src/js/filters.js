@@ -39,8 +39,6 @@ function displayExercises(results) {
   <li class="filters__item">
     <img class="filters__img-first" src="${imgURL}"></img>
     <div class="filters__wrapper-first">
-    <h2 class="filters__title-first">${filter}</h2>
-    <p class="filters__text-first">${name}</p>
     <h2 class="filters__title-first">${capitalize(name)}</h2>
     <p class="filters__text-first">${filter}</p>
     </div>
