@@ -197,6 +197,10 @@ h3 {
   .exercises_banner-m {
     width: 50%;
   }
+
+  .quote-col .exercises_quote {
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {

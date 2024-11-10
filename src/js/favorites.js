@@ -35,6 +35,7 @@ function removeFavoriteExercise(id) {
 // Функція для відображення обраних вправ
 async function displayFavoriteExercises() {
   const exerciseContainer = document.querySelector('.favorites-list');
+  if (!exerciseContainer) return;
   const favoriteIds = getFavoriteExerciseIds();
   exerciseContainer.innerHTML = favoriteIds.length
     ? (await Promise.all(favoriteIds.map(id => apiService.getExercisesById(id))))
