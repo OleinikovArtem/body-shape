@@ -40,7 +40,6 @@ export default class APIService {
     }
   }
 
-  
   async patchRating(_id, ratingData) {
     try {
       this.page += 1;
@@ -54,5 +53,4 @@ export default class APIService {
       console.log(error);
     }
   }
-
 }

@@ -1,9 +1,5 @@
 import icons from '../img/sprite.svg';
 
-const localFavorite = document.querySelector('.js-list');
-
-localFavorite.addEventListener('click', removeElement);
-
 function removeElement(event) {
   if (!event.target.closest('.js-remove-btn')) {
     return;
@@ -80,3 +76,10 @@ export function createMarkupFavorite() {
     localFavorite.insertAdjacentHTML('beforeend', markup);
   }
 }
+
+function init() {
+  const localFavorite = document.querySelector('.js-list');
+
+  localFavorite.addEventListener('click', removeElement);
+}
+document.addEventListener('load', init)

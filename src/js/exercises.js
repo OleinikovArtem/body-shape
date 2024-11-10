@@ -1,15 +1,16 @@
-import APIService from './api-service';
+import APIService from './api';
 import icons from '../img/sprite.svg';
+import pagingIcons from '../img/paging-icons.svg';
 
 const apiService = new APIService();
 const listItem = document.querySelector('.js-list');
 const paginationButtons = document.getElementById('pagination-numbers');
 const searchForm = document.querySelector('.search__form');
-const span = document.querySelector('.exersices__span');
-const text = document.querySelector('.exersices__text');
+const span = document.querySelector('.exercises__span');
+const text = document.querySelector('.exercises__text');
 let currentPage = 1;
 
-listItem.addEventListener('click', onCardClick);
+listItem?.addEventListener('click', onCardClick);
 
 async function onCardClick(event) {
   if (!event.target.closest('.filters__item')) {
@@ -79,7 +80,7 @@ export function renderExercises(results) {
               <div class="card__wrap-title">
               <div class="card__title-svg-btn">
                 <svg class="card__title-svg" width="24" height="24">
-                  <use href="${icons}#icon-running-stick-figure"></use>
+                  <use href="${icons}#icon-running-man"></use>
                 </svg>
                 </div>
                 <h2 class="card__title">${name}</h2>
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function setCurrentPage(filter, name, i) {
   currentPage = i;
+
   try {
     const { results, totalPages } = await apiService.getExercises(
       filter,
@@ -134,24 +136,114 @@ function setupPagination({ filter, name, totalPages }) {
 
   if (totalPages <= 1) return;
 
-  for (let i = 1; i <= totalPages; i++) {
-    const pageNumber = document.createElement('button');
-    pageNumber.className = 'pagination-button';
-    pageNumber.textContent = i;
-
-    paginationButtons.appendChild(pageNumber);
-
-    pageNumber.addEventListener('click', () => {
-      setCurrentPage(filter, name, i);
+  if (totalPages > 5) {
+    const backwards = ['first', 'prev'];
+    backwards.forEach(button => {
+      const navButton = document.createElement('button');
+      const active = currentPage !== 1;
+      if (active) {
+        navButton.classList.add('active-btn');
+        navButton.addEventListener('click', () => {
+          if (button === 'first') {
+            setCurrentPage(filter, name, 1);
+          } else if (button === 'prev') {
+            setCurrentPage(filter, name, currentPage - 1);
+          }
+        });
+      }
+      navButton.insertAdjacentHTML(
+        'beforeend',
+        `<svg class="pagination-icon" width="24" height="24">
+                  <use href="${pagingIcons}#icon-page-${button}"></use>
+                </svg>`
+      );
+      paginationButtons.appendChild(navButton);
     });
+
+    const dots = document.createElement('button');
+    dots.className = 'pagination-button-dots';
+    dots.insertAdjacentHTML('beforeend', `<p>...</p>`);
+
+    if (currentPage === 1) {
+      for (let i = 1; i <= 3; i++) {
+        const pageNumber = document.createElement('button');
+        pageNumber.className = 'pagination-button';
+        pageNumber.textContent = i;
+        paginationButtons.appendChild(pageNumber);
+        pageNumber.addEventListener('click', () => {
+          setCurrentPage(filter, name, i);
+        });
+      }
+      paginationButtons.appendChild(dots);
+    } else if (currentPage === totalPages) {
+      paginationButtons.appendChild(dots);
+      for (let i = totalPages - 2; i <= totalPages; i++) {
+        const pageNumber = document.createElement('button');
+        pageNumber.className = 'pagination-button';
+        pageNumber.textContent = i;
+        paginationButtons.appendChild(pageNumber);
+        pageNumber.addEventListener('click', () => {
+          setCurrentPage(filter, name, i);
+        });
+      }
+    } else {
+      paginationButtons.appendChild(dots);
+      const start = currentPage > 3 ? currentPage - 2 : 1;
+      const end = currentPage < totalPages - 2 ? currentPage + 2 : totalPages;
+      for (let i = start; i <= end; i++) {
+        const pageNumber = document.createElement('button');
+        pageNumber.className = 'pagination-button';
+        pageNumber.textContent = i;
+        paginationButtons.appendChild(pageNumber);
+        pageNumber.addEventListener('click', () => {
+          setCurrentPage(filter, name, i);
+        });
+      }
+      paginationButtons.appendChild(dots.cloneNode(true));
+    }
+
+    const forwards = ['next', 'last'];
+    forwards.forEach(button => {
+      const navButton = document.createElement('button');
+      const active = currentPage !== totalPages;
+      if (active) {
+        navButton.classList.add('active-btn');
+        navButton.addEventListener('click', () => {
+          if (button === 'last') {
+            setCurrentPage(filter, name, totalPages);
+          } else if (button === 'next') {
+            setCurrentPage(filter, name, currentPage + 1);
+          }
+        });
+      }
+      navButton.insertAdjacentHTML(
+        'beforeend',
+        `<svg class="pagination-icon" width="24" height="24">
+                  <use href="${pagingIcons}#icon-page-${button}"></use>
+                </svg>`
+      );
+      paginationButtons.appendChild(navButton);
+    });
+  } else {
+    for (let i = 1; i <= totalPages; i++) {
+      const pageNumber = document.createElement('button');
+      pageNumber.className = 'pagination-button';
+      pageNumber.textContent = i;
+      paginationButtons.appendChild(pageNumber);
+      pageNumber.addEventListener('click', () => {
+        setCurrentPage(filter, name, i);
+      });
+    }
   }
   handleActivePageNumber();
 }
 
 const handleActivePageNumber = () => {
-  document.querySelectorAll('.pagination-button').forEach((button, page) => {
+  document.querySelectorAll('.pagination-button').forEach(button => {
     button.classList.remove('active-btn');
-    if (page + 1 === currentPage) {
+    const page = Number(button.textContent);
+
+    if (page === currentPage) {
       button.classList.add('active-btn');
     }
   });

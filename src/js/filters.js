@@ -1,6 +1,7 @@
-import APIService from './api-service';
+import APIService from './api';
 const apiService = new APIService();
-const listItem = document.querySelector('.js-list');
+const list = document.querySelector('.js-list');
+
 const paginationButtons = document.getElementById('pagination-numbers');
 let currentPage = 1;
 
@@ -21,7 +22,17 @@ async function getFiltersExercises(params, currentPage) {
 }
 
 function displayExercises(results) {
-  listItem.innerHTML = '';
+  if (!list) return;
+  list.innerHTML = '';
+
+  if (results.length === 0) {
+    list.insertAdjacentHTML(
+      'beforeend',
+      `<p class="filters__empty">No exercises found</p>`
+    );
+    return;
+  }
+
   const markup = results
     .map(({ filter, name, imgURL }) => {
       return `
@@ -30,25 +41,38 @@ function displayExercises(results) {
     <div class="filters__wrapper-first">
     <h2 class="filters__title-first">${filter}</h2>
     <p class="filters__text-first">${name}</p>
+    <h2 class="filters__title-first">${capitalize(name)}</h2>
+    <p class="filters__text-first">${filter}</p>
     </div>
   </li>
     `;
     })
     .join('');
 
-  listItem.insertAdjacentHTML('beforeend', markup);
+  list.insertAdjacentHTML('beforeend', markup);
 }
 
 document.querySelectorAll('.btnFilters').forEach(button => {
   button.addEventListener('click', () => {
     const params = button.innerText;
-    listItem.innerHTML = '';
+    list.innerHTML = '';
     currentPage = 1;
     getFiltersExercises(params, currentPage);
   });
 });
 
-function setupPagination({ results, totalPages }) {
+function capitalize(val) {
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  const words = val.split(' ');
+  const capitalizedWords = words.map(capitalizeFirstLetter);
+  return capitalizedWords.join(' ');
+}
+
+export function setupPagination({ results, totalPages }) {
+  if (!paginationButtons) return;
   paginationButtons.innerHTML = '';
 
   if (totalPages <= 1) return;
@@ -66,22 +90,23 @@ function setupPagination({ results, totalPages }) {
       setCurrentPage(params, i);
     });
   }
-  handleActivePageNumber();
+  handleActivePageNumber(currentPage);
 }
 
 async function setCurrentPage(params, i) {
   currentPage = i;
   await getFiltersExercises(params, currentPage);
-  handleActivePageNumber();
+  handleActivePageNumber(currentPage);
   scrollToTop();
 }
 
-const handleActivePageNumber = () => {
+const handleActivePageNumber = currentPage => {
   document.querySelectorAll('.pagination-button').forEach((button, page) => {
     button.classList.remove('active-btn');
     if (page + 1 === currentPage) {
       button.classList.add('active-btn');
     }
+    scrollToTop();
   });
 };
 
@@ -90,4 +115,4 @@ function scrollToTop() {
     top: 830,
     behavior: 'auto',
   });
-}
+};

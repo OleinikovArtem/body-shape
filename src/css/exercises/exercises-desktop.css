@@ -1,0 +1,104 @@
+@media screen and (min-width: 1440px) {
+  .filters__list {
+    max-width: 900px;
+    margin-left: auto;
+  }
+
+  .filters__item {
+    flex-basis: calc((100% - 30px) / 3);
+    width: 100%;
+    position: relative;
+  }
+
+  .filters__item-card {
+    max-width: 442px;
+  }
+
+  .exercises__container {
+    flex-direction: row;
+    row-gap: 0;
+    justify-content: space-between;
+  }
+
+  .exercises__search-btn-wrap {
+    gap: 30px;
+  }
+
+  .search__input {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+
+  .quote-filters__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .quote-filters__container .aside__container {
+    order: 1;
+  }
+
+  .quote-filters__container .filters__container {
+    order: 2;
+  }
+
+  .filters__list {
+    width: 900px;
+  }
+
+  .aside__container {
+    width: 444px;
+    padding-top: 0;
+  }
+
+  .quote__container {
+    width: 444px;
+    min-height: 242px;
+  }
+
+  .aside-quote__wrapper {
+    min-height: 124px;
+  }
+
+  .aside__img {
+    border-radius: 20px;
+    margin: 0 auto;
+    background: linear-gradient(
+        180deg,
+        rgba(17, 17, 17, 0) 0%,
+        rgba(17, 17, 17, 0.4) 100%
+      ),
+      url(../../img/exercise-image-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 444px;
+    height: 242px;
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .aside__img {
+      background: linear-gradient(
+          180deg,
+          rgba(17, 17, 17, 0) 0%,
+          rgba(17, 17, 17, 0.4) 100%
+        ),
+        url(../../img/exercise-image-desktop@2x.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .aside__white-card {
+    width: 444px;
+    min-height: 315px;
+  }
+
+  .aside__white-card-text {
+    -webkit-line-clamp: 9;
+    line-clamp: 9;
+  }
+}

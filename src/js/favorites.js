@@ -1,10 +1,11 @@
-import { getQuote, getExerciseById } from './api.js';
+import ApiService from './api.js';
 import { initializeMenu, initializeNavigationLinks } from './menu.js';
+const apiService = new ApiService();
 
 // Функція для відображення цитати дня
 async function displayQuote() {
   try {
-    const response = await getQuote();
+    const response = await apiService.getQuote();
     if (response) {
       document.querySelector('.quote-text').textContent = response.quote || '';
       document.querySelector('.quote-author').textContent =
@@ -36,7 +37,7 @@ async function displayFavoriteExercises() {
   const exerciseContainer = document.querySelector('.favorites-list');
   const favoriteIds = getFavoriteExerciseIds();
   exerciseContainer.innerHTML = favoriteIds.length
-    ? (await Promise.all(favoriteIds.map(id => getExerciseById(id))))
+    ? (await Promise.all(favoriteIds.map(id => apiService.getExercisesById(id))))
         .map(createExerciseCardHtml)
         .join('')
     : `<li class="empty-favorites">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</li>`;

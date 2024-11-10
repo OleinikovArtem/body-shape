@@ -13,7 +13,7 @@ const modalExercises = document.querySelector('.modal-exercises');
 const overlay = document.querySelector('.overlay');
 const listItem = document.querySelector('.js-list');
 
-listItem.addEventListener('click', onExercisesCardClick);
+listItem?.addEventListener('click', onExercisesCardClick);
 
 async function onExercisesCardClick(event) {
   if (!event.target.closest('.card__btn')) {
@@ -169,7 +169,7 @@ function createMarkup({
               <h3 class="modal-exercises__subtitle">Popular</h3>
               <p class="modal-exercises__text">${popularity}</p>
             </li>
-            
+
             <li class="modal-exercises__item">
               <h3 class="modal-exercises__subtitle">Burned Calories</h3>
               <p class="modal-exercises__text">${burnedCalories}/${time}</p>
@@ -255,7 +255,7 @@ function closeModalExercises() {
   document.body.style.overflow = 'auto';
 }
 
-overlay.addEventListener('click', function (event) {
+overlay?.addEventListener('click', function (event) {
   if (event.target === overlay) {
     closeModalExercises();
   }

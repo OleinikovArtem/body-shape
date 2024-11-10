@@ -6,9 +6,9 @@ const ratingValueElement = document.querySelector('.rating__value');
 const emailInput = document.querySelector('.rating-email');
 const commentTextarea = document.querySelector('.rating-comment');
 
-modalExercises.addEventListener('click', onExercisesCardClick);
-btnIsClosed.addEventListener('click', closeModal);
-modalIsOpen.addEventListener('click', closeOverlay);
+modalExercises?.addEventListener('click', onExercisesCardClick);
+btnIsClosed?.addEventListener('click', closeModal);
+modalIsOpen?.addEventListener('click', closeOverlay);
 document.addEventListener('keydown', onEscClick);
 
 // Обробник натискання на кнопку "Оцінка"
@@ -133,14 +133,15 @@ function updateSendButtonState() {
 }
 
 // Додаємо обробники подій для полів форми
-emailInput.addEventListener('input', updateSendButtonState);
-commentTextarea.addEventListener('input', updateSendButtonState);
+emailInput?.addEventListener('input', updateSendButtonState);
+commentTextarea?.addEventListener('input', updateSendButtonState);
 
 // Обробник для елемента рейтингу з використанням MutationObserver
 const observer = new MutationObserver(updateSendButtonState);
 
-observer.observe(ratingValueElement, { childList: true, subtree: true });
-
+if (ratingValueElement) {
+  observer.observe(ratingValueElement, { childList: true, subtree: true });
+}
 // Очищення форми після відправки
 function clearForm() {
   emailInput.value = '';
@@ -154,7 +155,7 @@ function clearForm() {
 }
 
 // Виведення значень рейтингу, пошти і коментаря в консоль при натисканні кнопки "Send"
-sendButton.addEventListener('click', event => {
+sendButton?.addEventListener('click', event => {
   event.preventDefault();
 
   if (!isFormValid()) {

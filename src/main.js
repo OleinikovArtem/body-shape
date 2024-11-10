@@ -1,6 +1,4 @@
 import 'izitoast/dist/css/iziToast.min.css';
-import iziToast from 'izitoast';
-import { getQuote } from './js/functions';
 
 import './js/api-service';
 import './js/filters';
