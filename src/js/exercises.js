@@ -42,7 +42,7 @@ export const initializeExercisesSection = () => {
     });
   };
 
-  const renderCategories = (categories, scrollToElement) => {
+  const renderCategories = (categories, scrollToFilters) => {
     categoriesContainer.innerHTML = '';
     categoriesContainer.style.display = 'grid';
     exercisesContainer.style.display = 'none';
@@ -56,7 +56,7 @@ export const initializeExercisesSection = () => {
         : '<p>No categories found for the selected filter.</p>'
     );
 
-    scrollToElement && scrollToElement(filtersTitle);
+    scrollToFilters && scrollToElement(filtersTitle);
   };
 
   const renderExercises = (exercises, category) => {
@@ -85,20 +85,20 @@ export const initializeExercisesSection = () => {
     filter,
     page = 1,
     resetPagination = false,
-    scrollToElement,
+    scrollToFilters,
   }) => {
     activeFilter = filter;
     setActiveFilterButton(filter);
 
     const data = await fetchCategories(filter, page);
-    renderCategories(data.results, scrollToElement);
+    renderCategories(data.results, scrollToFilters);
 
     if (!categoryPagination || resetPagination) {
       categoryPagination = new Pagination({
         container: paginationContainer,
         totalPages: data.totalPages,
         onPageChange: page =>
-          loadCategories({ filter: activeFilter, page, scrollToElement }),
+          loadCategories({ filter: activeFilter, page, scrollToFilters: true }),
       });
     } else {
       categoryPagination.setTotalPages(data.totalPages);
