@@ -44,7 +44,7 @@ async function onExercisesCardClick(event) {
   }
 }
 
-function openModalExercises() {
+export function openModalExercises() {
   const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px';
 
   modalExercises.classList.remove('hidden');
@@ -53,7 +53,7 @@ function openModalExercises() {
   document.body.style.overflow = 'hidden';
 }
 
-function updateModal(markup) {
+export function updateModal(markup) {
   modalExercises.innerHTML = markup;
 
   const btnModalClose = modalExercises.querySelector(
@@ -109,7 +109,7 @@ function createRating(rating) {
   return ratingWithStars;
 }
 
-function createMarkup({
+export function createMarkup({
   _id,
   bodyPart,
   equipment,

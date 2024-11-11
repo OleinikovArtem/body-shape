@@ -1,8 +1,30 @@
 import ApiService from './api.js';
 import { initializeMenu, initializeNavigationLinks } from './menu.js';
 import { displayQuoteOfTheDay } from './quote.js';
+import {
+  openModalExercises,
+  createMarkup,
+  updateModal,
+} from './modal-exercises.js';
 
 const apiService = new ApiService();
+
+// Функция для открытия модального окна при клике на карточку избранного упражнения
+async function onFavoriteCardClick(event) {
+  const button = event.target.closest('.card__btn');
+  if (!button) return;
+
+  try {
+    const exerciseID = button.getAttribute('data-id');
+    const exerciseData = await apiService.getExercisesById(exerciseID);
+
+    const markup = createMarkup(exerciseData);
+    updateModal(markup);
+    openModalExercises();
+  } catch (error) {
+    console.error('Error fetching exercise data:', error);
+  }
+}
 
 // Функція для отримання масиву ID обраних вправ із localStorage
 function getFavoriteExerciseIds() {
@@ -15,13 +37,14 @@ function removeFavoriteExercise(id) {
     favId => favId !== id
   );
   localStorage.setItem('favoriteExercises', JSON.stringify(updatedFavorites));
-  displayFavoriteExercises(); // Оновлення списку
+  displayFavoriteExercises();
 }
 
 // Функція для відображення обраних вправ
 async function displayFavoriteExercises() {
   const exerciseContainer = document.querySelector('.favorites-list');
   if (!exerciseContainer) return;
+
   const favoriteIds = getFavoriteExerciseIds();
   exerciseContainer.innerHTML = favoriteIds.length
     ? (
@@ -116,8 +139,15 @@ document.addEventListener('click', event => {
   }
 });
 
-// Ініціалізація сторінки
+// Инициализация событий и данных после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
+  const favoriteList = document.querySelector('.favorites-list');
+
+  // Устанавливаем обработчик для кликов по карточкам избранных упражнений
+  if (favoriteList) {
+    favoriteList.addEventListener('click', onFavoriteCardClick);
+  }
+
   displayQuoteOfTheDay();
   displayFavoriteExercises();
   initializeMenu();
