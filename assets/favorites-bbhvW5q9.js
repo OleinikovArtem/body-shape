@@ -145,4 +145,4 @@ import{a as n}from"./vendor-BT7OT44q.js";(function(){const t=document.createElem
     <svg class="card-icon" width="24" height="24">
         <use href="./img/icons.svg#icon-running-stick"></use>
     </svg>`};document.addEventListener("click",e=>{const t=e.target.closest(".recycle-bin");if(t){const s=t.getAttribute("data-id");oe(s)}});document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".favorites-list");e&&e.addEventListener("click",se),te(),A(),V(),Z()});export{N as A,V as a,Z as b,te as d,l as i};
-//# sourceMappingURL=favorites-C3lsW4zY.js.map
+//# sourceMappingURL=favorites-bbhvW5q9.js.map
