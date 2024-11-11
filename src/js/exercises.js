@@ -5,7 +5,7 @@ import {
   getCategoriesMarkup,
   getExercisesMarkup,
 } from './markupUtils.js';
-import { toggleClearButton, clearInput, scrollToElement } from './utils.js';
+import { toggleClearButton, clearInput, scrollToFilters } from './utils.js';
 
 export const initializeExercisesSection = () => {
   const categoriesContainer = document.querySelector('.categories-list');
@@ -42,12 +42,13 @@ export const initializeExercisesSection = () => {
     });
   };
 
-  const renderCategories = (categories, scrollToElement) => {
+  const renderCategories = (categories, cb) => {
     categoriesContainer.innerHTML = '';
     categoriesContainer.style.display = 'grid';
     exercisesContainer.style.display = 'none';
     searchForm.style.display = 'none';
     renderTitle(filtersTitle, null);
+    scrollToFilters(filtersTitle);
 
     categoriesContainer.insertAdjacentHTML(
       'beforeend',
@@ -56,7 +57,7 @@ export const initializeExercisesSection = () => {
         : '<p>No categories found for the selected filter.</p>'
     );
 
-    scrollToElement && scrollToElement(filtersTitle);
+    cb && cb();
   };
 
   const renderExercises = (exercises, category) => {
@@ -65,7 +66,7 @@ export const initializeExercisesSection = () => {
     exercisesContainer.style.display = 'grid';
     searchForm.style.display = 'flex';
     renderTitle(filtersTitle, category);
-    scrollToElement(filtersTitle);
+    scrollToFilters(filtersTitle);
 
     exercisesContainer.insertAdjacentHTML(
       'beforeend',
@@ -85,20 +86,18 @@ export const initializeExercisesSection = () => {
     filter,
     page = 1,
     resetPagination = false,
-    scrollToElement,
   }) => {
     activeFilter = filter;
     setActiveFilterButton(filter);
 
     const data = await fetchCategories(filter, page);
-    renderCategories(data.results, scrollToElement);
+    renderCategories(data.results);
 
     if (!categoryPagination || resetPagination) {
       categoryPagination = new Pagination({
         container: paginationContainer,
         totalPages: data.totalPages,
-        onPageChange: page =>
-          loadCategories({ filter: activeFilter, page, scrollToElement }),
+        onPageChange: page => loadCategories({ filter: activeFilter, page }),
       });
     } else {
       categoryPagination.setTotalPages(data.totalPages);
