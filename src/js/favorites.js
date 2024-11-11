@@ -9,7 +9,7 @@ import {
 
 const apiService = new ApiService();
 
-// Функция для открытия модального окна при клике на карточку избранного упражнения
+// Функція для відкриття модального вікна при натисканні на картку обраної вправи
 async function onFavoriteCardClick(event) {
   const button = event.target.closest('.card__btn');
   if (!button) return;
@@ -37,14 +37,13 @@ function removeFavoriteExercise(id) {
     favId => favId !== id
   );
   localStorage.setItem('favoriteExercises', JSON.stringify(updatedFavorites));
-  displayFavoriteExercises();
+  displayFavoriteExercises(); // Оновлення списку
 }
 
 // Функція для відображення обраних вправ
 async function displayFavoriteExercises() {
   const exerciseContainer = document.querySelector('.favorites-list');
   if (!exerciseContainer) return;
-
   const favoriteIds = getFavoriteExerciseIds();
   exerciseContainer.innerHTML = favoriteIds.length
     ? (
@@ -139,11 +138,11 @@ document.addEventListener('click', event => {
   }
 });
 
-// Инициализация событий и данных после загрузки DOM
+// Ініціалізація подій та даних після завантаження DOM
 document.addEventListener('DOMContentLoaded', () => {
   const favoriteList = document.querySelector('.favorites-list');
 
-  // Устанавливаем обработчик для кликов по карточкам избранных упражнений
+  // Встановлюємо обробник для кліків за картками вибраних вправ
   if (favoriteList) {
     favoriteList.addEventListener('click', onFavoriteCardClick);
   }
