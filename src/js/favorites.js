@@ -43,10 +43,12 @@ function createExerciseCardHtml(exercise) {
           <div class="card-workout-logo card-text-logo">Workout</div>
           <div class="workout-logo-addon">${getLogoSvg(exercise._id)}</div>
         </div>
-        <div class="card-start">
-          <div class="card-start-name usual-text">Start</div>
-          <div class="card-start-arrow">${svg.arrow}</div>
-        </div>
+        <button class="card__btn card-start" data-id="${
+          exercise._id
+        }" type="button">
+          <span class="card-start-name usual-text">Start</span>
+          <span class="card-start-arrow">${svg.arrow}</span>
+        </button>
       </div>
       <div class="card-body">
         <div class="card-body-logo">${svg.runner}</div>
