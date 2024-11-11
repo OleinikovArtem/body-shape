@@ -30,6 +30,9 @@ export default defineConfig(({ command }) => {
             if (assetInfo.name && assetInfo.name.endsWith('.html')) {
               return '[name].[ext]';
             }
+            if (assetInfo.name === 'sprite.svg') {
+              return 'assets/[name][extname]';
+            }
             return 'assets/[name]-[hash][extname]';
           },
         },
