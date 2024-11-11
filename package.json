@@ -1,11 +1,11 @@
 {
-  "name": "your_energy_vanilla_js",
+  "name": "body-shape",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/your_energy_vanilla_js/",
+    "build": "vite build --base=/body-shape/",
     "preview": "vite preview"
   },
   "devDependencies": {
