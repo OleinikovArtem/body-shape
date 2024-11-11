@@ -1,8 +1,30 @@
 import ApiService from './api.js';
 import { initializeMenu, initializeNavigationLinks } from './menu.js';
 import { displayQuoteOfTheDay } from './quote.js';
+import {
+  openModalExercises,
+  createMarkup,
+  updateModal,
+} from './modal-exercises.js';
 
 const apiService = new ApiService();
+
+// Функція для відкриття модального вікна при натисканні на картку обраної вправи
+async function onFavoriteCardClick(event) {
+  const button = event.target.closest('.card__btn');
+  if (!button) return;
+
+  try {
+    const exerciseID = button.getAttribute('data-id');
+    const exerciseData = await apiService.getExercisesById(exerciseID);
+
+    const markup = createMarkup(exerciseData);
+    updateModal(markup);
+    openModalExercises();
+  } catch (error) {
+    console.error('Error fetching exercise data:', error);
+  }
+}
 
 // Функція для отримання масиву ID обраних вправ із localStorage
 function getFavoriteExerciseIds() {
@@ -43,10 +65,12 @@ function createExerciseCardHtml(exercise) {
           <div class="card-workout-logo card-text-logo">Workout</div>
           <div class="workout-logo-addon">${getLogoSvg(exercise._id)}</div>
         </div>
-        <div class="card-start">
-          <div class="card-start-name usual-text">Start</div>
-          <div class="card-start-arrow">${svg.arrow}</div>
-        </div>
+        <button class="card__btn card-start" data-id="${
+          exercise._id
+        }" type="button">
+          <span class="card-start-name usual-text">Start</span>
+          <span class="card-start-arrow">${svg.arrow}</span>
+        </button>
       </div>
       <div class="card-body">
         <div class="card-body-logo">${svg.runner}</div>
@@ -114,8 +138,15 @@ document.addEventListener('click', event => {
   }
 });
 
-// Ініціалізація сторінки
+// Ініціалізація подій та даних після завантаження DOM
 document.addEventListener('DOMContentLoaded', () => {
+  const favoriteList = document.querySelector('.favorites-list');
+
+  // Встановлюємо обробник для кліків за картками вибраних вправ
+  if (favoriteList) {
+    favoriteList.addEventListener('click', onFavoriteCardClick);
+  }
+
   displayQuoteOfTheDay();
   displayFavoriteExercises();
   initializeMenu();

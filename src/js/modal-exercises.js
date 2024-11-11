@@ -44,7 +44,7 @@ async function onExercisesCardClick(event) {
   }
 }
 
-function openModalExercises() {
+export function openModalExercises() {
   const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px';
 
   modalExercises.classList.remove('hidden');
@@ -53,9 +53,13 @@ function openModalExercises() {
   document.body.style.overflow = 'hidden';
 }
 
-function updateModal(markup) {
+export function updateModal(markup) {
   modalExercises.innerHTML = markup;
 
+  const btnModalClose = modalExercises.querySelector(
+    '.modal-exercises__btn-close'
+  );
+  btnModalClose?.addEventListener('click', closeModalExercises);
   toggleFavorites();
 }
 
@@ -105,7 +109,7 @@ function createRating(rating) {
   return ratingWithStars;
 }
 
-function createMarkup({
+export function createMarkup({
   _id,
   bodyPart,
   equipment,
@@ -207,20 +211,25 @@ function toggleFavorites() {
   }
 }
 
-const favoriteExercises = 'favoriteExercises'
+const favoriteExercises = 'favoriteExercises';
 
 function addToFavorites(exerciseData) {
   const favorites = JSON.parse(localStorage.getItem(favoriteExercises)) || [];
-  favorites.push(exerciseData._id)
-  localStorage.setItem(favoriteExercises, JSON.stringify(favorites))
+  favorites.push(exerciseData._id);
+  localStorage.setItem(favoriteExercises, JSON.stringify(favorites));
 }
 
 function removeFavorite(exerciseData) {
   const favorites = JSON.parse(localStorage.getItem(favoriteExercises)) || [];
 
-  const filteredFavorites = favorites.filter(favorite => favorite !== exerciseData._id)
+  const filteredFavorites = favorites.filter(
+    favorite => favorite !== exerciseData._id
+  );
 
-  localStorage.setItem(favoriteExercises, JSON.stringify(favorites.push(filteredFavorites)))
+  localStorage.setItem(
+    favoriteExercises,
+    JSON.stringify(favorites.push(filteredFavorites))
+  );
 }
 
 function toggleBtn(exerciseData) {
@@ -231,7 +240,6 @@ function toggleBtn(exerciseData) {
   );
 
   const localFavorite = document.querySelector('.favorites__list');
-
 
   if (isFavorite) {
     btnModalFavorites.innerHTML = createRemoveFromFavoritesMarkup();
