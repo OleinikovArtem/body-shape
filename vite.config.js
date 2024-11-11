@@ -31,7 +31,7 @@ export default defineConfig(({ command }) => {
               return '[name].[ext]';
             }
             if (assetInfo.name === 'sprite.svg') {
-              return 'assets/[name][extname]';
+              return 'img/[name][extname]';
             }
             return 'assets/[name]-[hash][extname]';
           },
