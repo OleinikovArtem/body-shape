@@ -12,7 +12,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-ul, ol {
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -24,15 +24,10 @@ a {
 }
 
 button {
-  border: none;
-  background: transparent;
   cursor: pointer;
-  padding: 0;
-}
-
-.form__btn.modal-button {
   border: none;
-  background: var(--color-white); 
+  background: none;
+  padding: 0;
 }
 
 img {

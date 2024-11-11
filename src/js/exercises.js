@@ -1,256 +1,167 @@
-import APIService from './api';
-import icons from '../img/sprite.svg';
-import pagingIcons from '../img/paging-icons.svg';
+import { fetchCategories, fetchExercises } from './api.js';
+import { Pagination } from './Pagination.js';
+import {
+  renderTitle,
+  getCategoriesMarkup,
+  getExercisesMarkup,
+} from './markupUtils.js';
+import { toggleClearButton, clearInput, scrollToFilters } from './utils.js';
 
-const apiService = new APIService();
-const listItem = document.querySelector('.js-list');
-const paginationButtons = document.getElementById('pagination-numbers');
-const searchForm = document.querySelector('.search__form');
-const span = document.querySelector('.exercises__span');
-const text = document.querySelector('.exercises__text');
-let currentPage = 1;
+export const initializeExercisesSection = () => {
+  const categoriesContainer = document.querySelector('.categories-list');
+  const filtersTitle = document.querySelector('.filters-title');
+  const filters = document.querySelector('#filters');
+  const paginationContainer = document.querySelector('.pagination');
+  const exercisesContainer = document.querySelector('.exercises-list');
+  const searchForm = document.querySelector('.search-form');
+  const searchInput = document.querySelector('.search-input');
+  const clearButton = document.querySelector('.clear-button');
 
-listItem?.addEventListener('click', onCardClick);
+  let activeFilter = 'Muscles';
+  let categoryPagination;
+  let exercisePagination;
+  let currentCategory = '';
+  let currentFilter = '';
 
-async function onCardClick(event) {
-  if (!event.target.closest('.filters__item')) {
-    return;
-  }
-  searchForm.classList.remove('hidden');
-  const item = event.target.closest('.filters__item');
+  searchInput.addEventListener('input', () =>
+    toggleClearButton(searchInput, clearButton)
+  );
+  clearButton.addEventListener('click', () =>
+    clearInput(searchInput, clearButton)
+  );
+  searchForm.addEventListener('submit', event => handleFormSubmit(event));
 
-  let filter = item.lastElementChild.children[0].innerText
-    .toLowerCase()
-    .replace(/\s/g, '');
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    const searchTerm = searchInput.value.trim();
+    loadExercises({
+      category: currentCategory,
+      filter: currentFilter,
+      keyword: searchTerm || '',
+      resetPagination: true,
+    });
+  };
 
-  const name = item.lastElementChild.children[1].innerText
-    .toLowerCase()
-    .replace(/\s/g, '%20');
+  const renderCategories = (categories, cb) => {
+    categoriesContainer.innerHTML = '';
+    categoriesContainer.style.display = 'grid';
+    exercisesContainer.style.display = 'none';
+    searchForm.style.display = 'none';
+    renderTitle(filtersTitle, null);
+    scrollToFilters(filtersTitle);
 
-  if (filter === 'bodyparts') {
-    filter = 'bodypart';
-  }
-
-  const obj = { filter, name };
-
-  localStorage.setItem('paramSearch', JSON.stringify(obj));
-
-  try {
-    const { results, totalPages } = await apiService.getExercises(
-      filter,
-      name,
-      currentPage
+    categoriesContainer.insertAdjacentHTML(
+      'beforeend',
+      categories && categories.length
+        ? getCategoriesMarkup(categories)
+        : '<p>No categories found for the selected filter.</p>'
     );
 
-    setupPagination({ filter, name, totalPages });
-    renderExercises(results);
-    textExercises(results);
-  } catch (error) {
-    console.log(error);
-  }
-}
+    cb && cb();
+  };
 
-function textExercises(results) {
-  text.innerText = `${results[0].bodyPart}`;
-  text.classList.remove('hidden');
-  span.classList.remove('hidden');
-}
+  const renderExercises = (exercises, category) => {
+    exercisesContainer.innerHTML = '';
+    categoriesContainer.style.display = 'none';
+    exercisesContainer.style.display = 'grid';
+    searchForm.style.display = 'flex';
+    renderTitle(filtersTitle, category);
+    scrollToFilters(filtersTitle);
 
-export function renderExercises(results) {
-  listItem.innerHTML = '';
-  const markup = results?.map(({ _id, rating, name, burnedCalories, bodyPart, target }) => {
-      return `
-      <li class="filters__item-card">
-        <div class="card__wrap">
-          <div class="card__block-btn">
-              <p class="card__badge">Workout</p>
-              <span class="card__rating">
-                <span>${rating}</span>
-                <svg class="card__rating-star" width="18" height="18">
-                  <use href="${icons}#icon-star"></use>
-                </svg>
-              </span>
-              <button class="card__btn" data-id="${_id}" type="button">Start
-                <svg class="card__btn-arrow" width="16" height="16">
-                  <use href="${icons}#icon-arrow-menu-mobile"></use>
-                </svg>
-              </button>
-            </div>
-              <div class="card__wrap-title">
-              <div class="card__title-svg-btn">
-                <svg class="card__title-svg" width="24" height="24">
-                  <use href="${icons}#icon-running-man"></use>
-                </svg>
-                </div>
-                <h2 class="card__title">${name}</h2>
-              </div>
-              <div class="card__block-info">
-                <p class="card__text-info"><span>Burned calories:</span>${burnedCalories}</p>
-                <p class="card__text-info"><span>Body part:</span>${bodyPart}</p>
-                <p class="card__text-info"><span>Target:</span>${target}</p>
-              </div>
-        </div>
-      </li>`;
-    })
-    .join('');
-  listItem.insertAdjacentHTML('beforeend', markup);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.exercises__btn');
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      searchForm.classList.add('hidden');
-      text.classList.add('hidden');
-      span.classList.add('hidden');
-    });
-  });
-});
-
-async function setCurrentPage(filter, name, i) {
-  currentPage = i;
-
-  try {
-    const { results, totalPages } = await apiService.getExercises(
-      filter,
-      name,
-      currentPage
+    exercisesContainer.insertAdjacentHTML(
+      'beforeend',
+      exercises && exercises.length
+        ? getExercisesMarkup(exercises)
+        : '<p>No exercises found for the selected category and filter.</p>'
     );
+  };
 
-    setupPagination({ filter, name, totalPages });
-    renderExercises(results);
-    textExercises(results);
-  } catch (error) {
-    console.log(error);
-  }
-  handleActivePageNumber();
-  scrollToTop();
-}
-
-function setupPagination({ filter, name, totalPages }) {
-  paginationButtons.innerHTML = '';
-
-  if (totalPages <= 1) return;
-
-  if (totalPages > 5) {
-    const backwards = ['first', 'prev'];
-    backwards.forEach(button => {
-      const navButton = document.createElement('button');
-      const active = currentPage !== 1;
-      if (active) {
-        navButton.classList.add('active-btn');
-        navButton.addEventListener('click', () => {
-          if (button === 'first') {
-            setCurrentPage(filter, name, 1);
-          } else if (button === 'prev') {
-            setCurrentPage(filter, name, currentPage - 1);
-          }
-        });
-      }
-      navButton.insertAdjacentHTML(
-        'beforeend',
-        `<svg class="pagination-icon" width="24" height="24">
-                  <use href="${pagingIcons}#icon-page-${button}"></use>
-                </svg>`
-      );
-      paginationButtons.appendChild(navButton);
+  const setActiveFilterButton = filterName => {
+    document.querySelectorAll('.filter-button').forEach(button => {
+      button.classList.toggle('active', button.dataset.filter === filterName);
     });
+  };
 
-    const dots = document.createElement('button');
-    dots.className = 'pagination-button-dots';
-    dots.insertAdjacentHTML('beforeend', `<p>...</p>`);
+  const loadCategories = async ({
+    filter,
+    page = 1,
+    resetPagination = false,
+  }) => {
+    activeFilter = filter;
+    setActiveFilterButton(filter);
 
-    if (currentPage === 1) {
-      for (let i = 1; i <= 3; i++) {
-        const pageNumber = document.createElement('button');
-        pageNumber.className = 'pagination-button';
-        pageNumber.textContent = i;
-        paginationButtons.appendChild(pageNumber);
-        pageNumber.addEventListener('click', () => {
-          setCurrentPage(filter, name, i);
-        });
-      }
-      paginationButtons.appendChild(dots);
-    } else if (currentPage === totalPages) {
-      paginationButtons.appendChild(dots);
-      for (let i = totalPages - 2; i <= totalPages; i++) {
-        const pageNumber = document.createElement('button');
-        pageNumber.className = 'pagination-button';
-        pageNumber.textContent = i;
-        paginationButtons.appendChild(pageNumber);
-        pageNumber.addEventListener('click', () => {
-          setCurrentPage(filter, name, i);
-        });
-      }
+    const data = await fetchCategories(filter, page);
+    renderCategories(data.results);
+
+    if (!categoryPagination || resetPagination) {
+      categoryPagination = new Pagination({
+        container: paginationContainer,
+        totalPages: data.totalPages,
+        onPageChange: page => loadCategories({ filter: activeFilter, page }),
+      });
     } else {
-      paginationButtons.appendChild(dots);
-      const start = currentPage > 3 ? currentPage - 2 : 1;
-      const end = currentPage < totalPages - 2 ? currentPage + 2 : totalPages;
-      for (let i = start; i <= end; i++) {
-        const pageNumber = document.createElement('button');
-        pageNumber.className = 'pagination-button';
-        pageNumber.textContent = i;
-        paginationButtons.appendChild(pageNumber);
-        pageNumber.addEventListener('click', () => {
-          setCurrentPage(filter, name, i);
-        });
-      }
-      paginationButtons.appendChild(dots.cloneNode(true));
+      categoryPagination.setTotalPages(data.totalPages);
     }
+  };
 
-    const forwards = ['next', 'last'];
-    forwards.forEach(button => {
-      const navButton = document.createElement('button');
-      const active = currentPage !== totalPages;
-      if (active) {
-        navButton.classList.add('active-btn');
-        navButton.addEventListener('click', () => {
-          if (button === 'last') {
-            setCurrentPage(filter, name, totalPages);
-          } else if (button === 'next') {
-            setCurrentPage(filter, name, currentPage + 1);
-          }
-        });
-      }
-      navButton.insertAdjacentHTML(
-        'beforeend',
-        `<svg class="pagination-icon" width="24" height="24">
-                  <use href="${pagingIcons}#icon-page-${button}"></use>
-                </svg>`
-      );
-      paginationButtons.appendChild(navButton);
+  const loadExercises = async ({
+    category,
+    filter,
+    keyword = '',
+    page = 1,
+    resetPagination = false,
+  }) => {
+    currentCategory = category;
+    currentFilter = filter;
+
+    const data = await fetchExercises({
+      bodypart: filter === 'Body parts' ? category : '',
+      muscles: filter === 'Muscles' ? category : '',
+      equipment: filter === 'Equipment' ? category : '',
+      keyword,
+      page,
+      limit: 10,
     });
-  } else {
-    for (let i = 1; i <= totalPages; i++) {
-      const pageNumber = document.createElement('button');
-      pageNumber.className = 'pagination-button';
-      pageNumber.textContent = i;
-      paginationButtons.appendChild(pageNumber);
-      pageNumber.addEventListener('click', () => {
-        setCurrentPage(filter, name, i);
+
+    renderExercises(data.results, category);
+
+    if (resetPagination || !exercisePagination) {
+      exercisePagination = new Pagination({
+        container: paginationContainer,
+        totalPages: data.totalPages,
+        onPageChange: newPage =>
+          loadExercises({
+            category,
+            filter,
+            keyword,
+            page: newPage,
+          }),
+      });
+    } else {
+      exercisePagination.setTotalPages(data.totalPages);
+    }
+  };
+
+  categoriesContainer.addEventListener('click', event => {
+    const categoryItem = event.target.closest('.categories-list-item');
+    if (categoryItem) {
+      loadExercises({
+        category: categoryItem.dataset.name,
+        filter: categoryItem.dataset.filter,
+        resetPagination: true,
       });
     }
-  }
-  handleActivePageNumber();
-}
+  });
 
-const handleActivePageNumber = () => {
-  document.querySelectorAll('.pagination-button').forEach(button => {
-    button.classList.remove('active-btn');
-    const page = Number(button.textContent);
-
-    if (page === currentPage) {
-      button.classList.add('active-btn');
+  filters.addEventListener('click', event => {
+    const filterButton = event.target.closest('.filter-button');
+    if (filterButton) {
+      loadCategories({
+        filter: filterButton.dataset.filter,
+        resetPagination: true,
+      });
     }
   });
-};
 
-function scrollToTop() {
-  window.scrollTo({
-    top: 830,
-    behavior: 'auto',
-  });
-}
+  loadCategories({ filter: 'Muscles' });
+};

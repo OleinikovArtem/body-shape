@@ -22,6 +22,7 @@ export const initializeNavigationLinks = () => {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
   const isActiveLink = linkPath => linkPath === currentPath;
+
   links.forEach(link => {
     if (isActiveLink(link.getAttribute('href'))) {
       link.classList.add('active');

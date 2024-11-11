@@ -1,0 +1,173 @@
+.quote-container {
+    display: grid;
+    grid-template-areas:
+        'black-card'
+        'image'
+        'white-card';
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.favorites-content-holder .quote-container {
+    grid-template-areas:
+        'black-card'
+        'white-card'
+        'image';
+}
+
+@media only screen and (min-width: 768px) {
+    .quote-container {
+        grid-template-areas:
+            'black-card image'
+            'white-card x';
+        grid-template-columns: 1fr 288px;
+        gap: 32px 16px;
+    }
+
+    .favorites-content-holder .quote-container {
+        grid-template-areas:
+            'black-card black-card'
+            'white-card image'
+        ;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .quote-container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .quote-card {
+        width: 100%;
+        max-width: 444px;
+    }
+
+    .quote-card.white {
+        max-height: 100%;
+    }
+}
+
+.quote-card {
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--dark-gray);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    grid-area: black-card;
+}
+
+@media only screen and (min-width: 768px) {
+    .quote-card {
+        padding: 40px;
+    }
+}
+
+.quote-card.white {
+    background-color: var(--white);
+    max-height: 202px;
+    grid-area: white-card;
+}
+
+@media only screen and (min-width: 768px) {
+    .quote-card.white {
+        max-height: 249px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .quote-card.white {
+        max-height: 100%;
+    }
+}
+
+.quote-title-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.quote-card .title {
+    color: var(--light-gray);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .quote-card .title {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+    }
+}
+
+.quote-card.white .title {
+    color: var(--dark-gray);
+}
+
+.inverted-comas-icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .inverted-comas-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.quote-card.white .subtitle {
+    color: rgba(36, 36, 36, 0.60);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: 2px;
+}
+
+.subtitle-holder {
+    margin-bottom: 16px;
+}
+
+.quote-card .description {
+    color: rgba(244, 244, 244, 0.60);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-bottom: 16px;
+}
+
+.quote-card.white .description {
+    color: var(--dark-gray);
+}
+
+.quote-author {
+    color: var(--light-gray);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.quote-image {
+    border-radius: 20px;
+    grid-area: image;
+}
+
+.quote-icon {
+    width: 32px;
+    height: 32px;
+}
+
+@media only screen and (max-width: 1439px) {
+    .truncate-text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

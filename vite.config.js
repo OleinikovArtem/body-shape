@@ -34,12 +34,12 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../build',
+      outDir: '../dist',
       emptyOutDir: true,
     },
     plugins: [
       injectHTML(),
-      FullReload(['./src/**/**/**.html', './src/img/sprite.svg']),
+      FullReload(['./src/**/**.html', './src/img/sprite.svg']),
       SortCss({
         sort: 'mobile-first',
       }),

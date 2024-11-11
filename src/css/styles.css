@@ -1,28 +1,19 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-
-/* Common styles */
-@import 'modern-normalize';
-@import url('./variables.css');
+@import url('./reset.css');
+@import url('./normalize.css');
 @import url('./base.css');
 @import url('./container.css');
-@import url('./reset.css');
 
-/* Sections style */
 @import url('./header.css');
-@import url('./mobile-menu.css');
-@import url('./hero.css');
-@import url('./exercises-quote.css');
-@import url('./footer.css');
+@import url('./mobie-menu.css');
 @import url('./social-links.css');
-/* TODO: check these styles */
-@import url('./exercises/exercises.css');
+@import url('./hero.css');
+@import url('./filters.css');
+@import url('./qoute.css');
+@import url('./categories.css');
+@import url('./pagination.css');
 @import url('./exercises.css');
-@import url('./quote.css');
-/* Exercises and Raiting */
-@import url('./modal-exercise.css');
-@import url('./modal-rating.css');
+@import url('./search-form.css');
+@import url('./modal.css');
+@import url('./favorites.css');
+@import url('./footer.css');
+@import url('./scroll-to-top.css');
