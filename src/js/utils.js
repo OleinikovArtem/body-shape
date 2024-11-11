@@ -8,7 +8,7 @@ export const clearInput = (input, button) => {
   input.focus();
 };
 
-export const scrollToFilters = element => {
+export const scrollToElement = element => {
   window.scrollTo({ top: element.offsetTop, behavior: 'smooth' });
 };
 
