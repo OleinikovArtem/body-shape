@@ -1,92 +1,122 @@
-.favorites_title {
-  color: #242424;
-  font-size: 28px;
-  line-height: 1.35;
-  letter-spacing: -1px;
-  font-weight: 500;
-  padding-top: 98px;
+.favorites-content-holder {
+    padding: 80px 0;
 }
 
-.favorites-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 32px;
-  width: 100%;
-}
-
-.favorites-list {
-  display: grid;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
-.empty-favorites {
-  padding-top: 20px;
-  text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-  .favorites-section {
+.favorites-exercises-holder {
+    display: flex;
     flex-direction: column;
-    gap: 40px;
-    width: 100%;
-    min-height: 100vh;
-  }
-
-  .favorites-list {
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-  }
-
-  .empty-favorites {
-    text-align: center;
-    color: #242424;
-    font-size: 16px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 600px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding-top: 132px;
-  }
+    gap: 20px;
 }
 
-@media screen and (min-width: 1200px) {
-  .favorites-section {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: flex-start;
-    min-height: 100vh;
-  }
+@media only screen and (min-width: 768px) {
+    .favorites-exercises-holder {
+        gap: 64px;
+    }
+}
 
-  .favorites-list {
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
+@media only screen and (min-width: 1440px) {
+    .favorites-exercises-holder {
+        flex-direction: row;
+        gap: 32px;
+    }
+
+    .favorites-exercises-holder .exercises-container {
+        width: 818px;
+    }
+}
+
+.favorites-title {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .favorites-title {
+        margin-bottom: 32px;
+        font-size: 44px;
+        font-weight: 400;
+        line-height: 48px;
+    }
+}
+
+.favorites-quote-card {
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    grid-area: white-card;
+}
+
+.favorites-quote-container {
+    display: grid;
     gap: 20px;
-  }
+    grid-template-areas:
+        'card'
+        'white-card'
+        'image';
+}
 
-  .favorites-list:empty {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-  }
+.favorites-quote-container .quote-card {
+    grid-area: card;
+    justify-content: flex-start;
+}
 
-  .empty-favorites {
+@media only screen and (min-width: 768px) {
+    .favorites-quote-container {
+        grid-template-columns: calc(50% - 12px);
+        grid-template-rows: 230px 142px;
+        grid-template-areas:
+            'card card'
+            'white-card image';
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .favorites-quote-container .quote-card {
+        max-width: 494px;
+    }
+}
+
+.favorites-quote-image {
+    border-radius: 20px;
+    grid-area: image;
+}
+
+.favorites-quote-card .title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 6px;
+}
+
+.favorites-quote-card .subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: rgba(36, 36, 36, 0.6);
+}
+
+.exercises-empty-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
     text-align: center;
-    color: #242424;
-    font-size: 16px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 600px;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+}
+
+@media only screen and (min-width: 768px) {
+    .exercises-empty-text {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .favorites-exercises-holder .exercises-list {
+        grid-template-columns: repeat(2, 404px);
+    }
 }

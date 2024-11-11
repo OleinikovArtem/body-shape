@@ -1,103 +1,70 @@
 <footer class="footer">
-  <div class="footer-container container">
-    <div class="footer-content">
-      <div class="footer-logo-and-social">
-        <a
-          href="./index.html"
-          class="footer-logo-link"
-          aria-label="YouEnergy"
-        >
-        <svg class="logo logo-footer">
-          <use href="./img/sprite.svg#icon-logo"></use>
-        </svg>
+  <div class="container">
+    <div class="footer-content-holder">
+      <div class="logo-section">
+        <a href="index.html" class="logo">
+          <svg class="logo">
+            <use href="./img/sprite.svg#icon-logo"></use>
+          </svg>
         </a>
-
-        <ul class="footer-social-list">
-          <li class="footer-social-link">
+        <ul class="social-media-links">
+          <li>
             <a
-              class="footer-icon"
               href="https://www.facebook.com/goITclub/"
               target="_blank"
-              aria-label="Facebook"
+              rel="noreferrer"
             >
-              <svg
-                class="footer-svg"
-                viewBox="0 0 32 32"
-                width="24"
-                height="24"
-                aria-hidden="true"
-              >
-                <use x="0" y="0" href="./img/icons.svg#icon-facebook"></use>
+              <svg width="28" height="28">
+                <use href="./img/sprite.svg#icon-facebook"></use>
               </svg>
             </a>
           </li>
-          <li class="footer-social-link">
+          <li>
             <a
-              class="footer-icon"
               href="https://www.instagram.com/goitclub/"
               target="_blank"
-              aria-label="Instagram"
+              rel="noreferrer"
             >
-              <svg
-                class="footer-svg"
-                viewBox="0 0 32 32"
-                width="24"
-                height="24"
-                aria-hidden="true"
-              >
-                <use x="0" y="0" href="./img/icons.svg#icon-instagram"></use>
+              <svg width="28" height="28">
+                <use href="./img/sprite.svg#icon-instagram"></use>
               </svg>
             </a>
           </li>
-          <li class="footer-social-link">
+          <li>
             <a
-              class="footer-icon"
               href="https://www.youtube.com/c/GoIT"
               target="_blank"
-              aria-label="YouTube"
+              rel="noreferrer"
             >
-              <svg
-                class="footer-svg"
-                viewBox="0 0 32 32"
-                width="24"
-                height="24"
-                aria-hidden="true"
-              >
-                <use x="0" y="0" href="./img/icons.svg#icon-youtube"></use>
+              <svg width="28" height="28">
+                <use href="./img/sprite.svg#icon-youtube"></use>
               </svg>
             </a>
           </li>
         </ul>
       </div>
-
-      <div class="footer-form">
-          <h2>Transforming  your <span class="footer-span">body</span> shape with us</h2>
-        <form class="subscribe-form" autocomplete="off">
-          <label>
-            Subscribe and learn about new exercises!
-            <input
-              type="email"
-              name="email"
-              required
-              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-              placeholder="Email"
-            />
-          </label>
+      <h2 class="footer-title">
+        Transforming your <span>body</span> shape with us
+      </h2>
+      <div class="subscription-form-holder">
+        <h3>Subscribe and learn about new exercises!</h3>
+        <form class="subscription-form" id="subscription-form">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          />
           <button type="submit">Send</button>
         </form>
       </div>
     </div>
 
-    <div class="bottom">
-        <p class="bottom-p">Your Energy. All rights reserved.</p>
-      <div class="footer-links-wrapper">
-        <ul class="footer-links">
-          <li><a class="policy" href="#">Privacy Policy /</a></li>
-          <li><a class="policy" href="#">Terms of Service</a></li>
-        </ul>
-        <p class="copyright">&#169; 2023</p>
-      </div>
-    </div>
-
+    <ul class="privacy-policy">
+      <li>Your Energy. All rights reserved.</li>
+      <li>Privacy Policy / Terms of Service</li>
+      <li>©2024</li>
+    </ul>
   </div>
 </footer>

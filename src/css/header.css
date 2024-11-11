@@ -1,91 +1,91 @@
 header {
-  background-color: var(--light-gray);
+    background-color: var(--light-gray);
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
 }
 
 .header .social-media-links {
-  display: none;
-  visibility: hidden;
+    display: none;
+    visibility: hidden;
 }
 
 .header nav {
-  display: none;
-  visibility: hidden;
+    display: none;
+    visibility: hidden;
 }
 
 @media only screen and (min-width: 768px) {
-  .header {
-    padding-top: 28px;
-  }
+    .header {
+        padding-top: 28px;
+    }
 
-  .header .social-media-links {
-    display: flex;
-    visibility: visible;
-  }
+    .header .social-media-links {
+        display: flex;
+        visibility: visible;
+    }
 
-  .header nav {
-    display: block;
-    visibility: visible;
-  }
+    .header nav {
+        display: block;
+        visibility: visible;
+    }
 
-  .nav-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    background: var(--dark-gray);
-    border-radius: 60px;
-    width: 233px;
-    height: 52px;
-  }
+    .nav-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        background: var(--dark-gray);
+        border-radius: 60px;
+        width: 233px;
+        height: 52px;
+    }
 
-  .nav-list li a {
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: var(--light-gray);
-    display: inline-block;
-  }
+    .nav-list li a {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: var(--light-gray);
+        display: inline-block;
+    }
 
-  .nav-list .active {
-    padding: 6px 12px;
-    color: var(--dark-gray);
-    background-color: var(--light-gray);
-    border-radius: 30px;
-  }
+    .nav-list .active {
+        padding: 6px 12px;
+        color: var(--dark-gray);
+        background-color: var(--light-gray);
+        border-radius: 30px;
+    }
 }
 
 .logo {
-  width: 132px;
-  height: 24px;
-  display: inline-block;
+    width: 132px;
+    height: 24px;
+    display: inline-block;
 }
 
 .burger-menu {
-  width: 32px;
-  height: 32px;
+    width: 32px;
+    height: 32px;
 }
 
 @media only screen and (min-width: 768px) {
-  .burger-menu {
-    display: none;
-    visibility: hidden;
-  }
+    .burger-menu {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
-  .nav-list {
-    width: 265px;
-  }
+    .nav-list {
+        width: 265px;
+    }
 }
 
 .burger {
-  width: 32px;
-  height: 32px;
+    width: 32px;
+    height: 32px;
 }
