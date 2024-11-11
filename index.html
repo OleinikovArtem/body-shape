@@ -2,21 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/body-shape/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/your_energy_vanilla_js/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/body-shape/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/body-shape/assets/vendor-BT7OT44q.js">
-    <link rel="modulepreload" crossorigin href="/body-shape/assets/favorites-bbhvW5q9.js">
-    <link rel="stylesheet" crossorigin href="/body-shape/assets/vendor-D_nxXpU-.css">
-    <link rel="stylesheet" crossorigin href="/body-shape/assets/favorites-C_aK1Fbs.css">
+    <script type="module" crossorigin src="/your_energy_vanilla_js/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/your_energy_vanilla_js/assets/vendor-BcxMf0ji.js">
+    <link rel="modulepreload" crossorigin href="/your_energy_vanilla_js/assets/menu-BdnAZTHz.js">
+    <link rel="stylesheet" crossorigin href="/your_energy_vanilla_js/assets/vendor-DSue4cjB.css">
+    <link rel="stylesheet" crossorigin href="/your_energy_vanilla_js/assets/menu-DoK-SFjE.css">
   </head>
+
   <body>
     <header>
   <div class="container header">
     <a href="index.html" class="logo">
       <svg class="logo">
-        <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-logo"></use>
+        <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-logo"></use>
       </svg>
     </a>
 
@@ -39,7 +40,7 @@
           rel="noreferrer"
         >
           <svg width="28" height="28">
-            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-facebook"></use>
+            <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-facebook"></use>
           </svg>
         </a>
       </li>
@@ -50,7 +51,7 @@
           rel="noreferrer"
         >
           <svg width="28" height="28">
-            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-instagram"></use>
+            <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-instagram"></use>
           </svg>
         </a>
       </li>
@@ -61,7 +62,7 @@
           rel="noreferrer"
         >
           <svg width="28" height="28">
-            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-youtube"></use>
+            <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-youtube"></use>
           </svg>
         </a>
       </li>
@@ -69,7 +70,7 @@
 
     <button class="burger-menu" type="button">
       <svg class="burger">
-        <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-burger"></use>
+        <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-burger"></use>
       </svg>
     </button>
   </div>
@@ -77,92 +78,132 @@
 
 
     <main>
-      <section class="section-hero">
+      <section class="hero-section">
   <div class="container">
-    <div class="hero-container">
-      <div class="hero__header-group">
-        <svg class="hero__icon" width="38" height="38">
-          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-sun"></use>
-        </svg>
-        <h1 class="hero__title">Get <span class="hero__title-highlight">Body</span> in <br />shape, Stay healthy</h1>
-        <div class="hero__deco-img">
-          <img
-            alt="Young women doing fitness outdoors together"
-            srcset="data:image/jpeg;base64,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 1x, /body-shape/assets/hero-img-small-desk@2x-qKIuR2nq.jpg 2x"
-            src="data:image/jpeg;base64,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"
-          />
-        </div>
+    <div class="hero-content-holder">
+      <div>
+        <h1 class="hero-title">
+          <svg>
+            <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-sun"></use>
+          </svg>
+          Get <span>Body</span> in shape, Stay healthy
+        </h1>
+        <p class="hero-description">
+          Transform your physique and embrace a healthier lifestyle with our
+          comprehensive fitness and nutrition support.
+        </p>
       </div>
-      <p class="hero__subtitle">
-        Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support.
-      </p>
-      <picture class="hero__image">
-        <source media="(max-width: 767px)" srcset="/body-shape/assets/hero-img-mob-CEq75wCJ.jpg 1x, /body-shape/assets/hero-img-mob@2x-C6Dijhb-.jpg 2x" />
-        <source
-          media="(min-width: 768px) and (max-width: 1439px)"
-          srcset="/body-shape/assets/hero-img-tab-lNWhMT3j.jpg 1x, /body-shape/assets/hero-img-tab@2x-rkYv-cay.jpg 2x"
-        />
-        <source
-          media="(min-width: 1440px)"
-          srcset="/body-shape/assets/hero-img-desk-CgxCavRU.jpg 1x, /body-shape/assets/hero-img-desk@2x-jbGdR9T4.jpg 2x"
-        />
-        <img src="/body-shape/assets/hero-img-mob-CEq75wCJ.jpg" alt="Women sportswear working out outdoors 2" />
-      </picture>
-      <ul class="hero__tag-container">
-        <li class="hero__hashtag">
-          <p class="hero__hasgtag-text">#Sport</p>
-        </li>
-        <li class="hero__hashtag">
-          <p class="hero__hasgtag-text">#Healthy</p>
-        </li>
-        <li class="hero__hashtag">
-          <p class="hero__hasgtag-text">#Workout</p>
-        </li>
-        <li class="hero__hashtag">
-          <p class="hero__hasgtag-text">#Diet</p>
-        </li>
-      </ul>
+      <div class="desktop-tags-holder">
+        <picture>
+          <source
+            media="(min-width: 1440px)"
+            srcset="/your_energy_vanilla_js/assets/tags-Bx0VQGNL.jpg 1x, /your_energy_vanilla_js/assets/tags@2x-BfXtZUTw.jpg 2x"
+          />
+          <img src="/your_energy_vanilla_js/assets/tags-Bx0VQGNL.jpg" alt="yoga" />
+        </picture>
+        <ul class="tags desktop-tags">
+          <li>#Sport</li>
+          <li>#Healthy</li>
+          <li>#Workout</li>
+          <li>#Diet</li>
+        </ul>
+      </div>
     </div>
+
+    <picture>
+      <!-- Mobile image -->
+      <source
+        media="(max-width: 767px)"
+        srcset="/your_energy_vanilla_js/assets/hero-mobile-DuTO87HP.jpg 1x, /your_energy_vanilla_js/assets/hero-mobile@2x-CDlPOh-y.jpg 2x"
+      />
+      <!-- Tablet image -->
+      <source
+        media="(min-width: 767px) and (max-width: 1439px)"
+        srcset="/your_energy_vanilla_js/assets/hero-tablet-CO4RLi7g.jpg 1x, /your_energy_vanilla_js/assets/hero-tablet@2x-kWxRp9BT.jpg 2x"
+      />
+      <!-- Desktop image -->
+      <source
+        media="(min-width: 1440px)"
+        srcset="/your_energy_vanilla_js/assets/hero-desktop-DtQpedGp.jpg 1x, /your_energy_vanilla_js/assets/hero-desktop@2x-DVWA3du4.jpg 2x"
+      />
+      <img class="hero-img" src="/your_energy_vanilla_js/assets/hero-desktop-DtQpedGp.jpg" alt="girls" />
+    </picture>
+    <ul class="tags">
+      <li>#Sport</li>
+      <li>#Healthy</li>
+      <li>#Workout</li>
+      <li>#Diet</li>
+    </ul>
   </div>
 </section>
 
-      <section class="section">
-  <div class="exercises__container container">
-    <h2 class="exercises__title">
-      Exercises<span class="exercises__span hidden"><span>&sol;</span></span>
-      <a class="exercises__text hidden"></a>
-    </h2>
-    <div class="exercises__search-btn-wrap">
-      <form class="search__form hidden">
-        <input class="search__input" type="text" placeholder="Search" />
-        <button class="search__button" type="button">
-          <svg class="search__icon" width="18" height="18">
-            <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-search"></use>
-          </svg>
-        </button>
-      </form>
-      <ul class="exercises__list">
-        <li>
-          <button class="exercises__btn btnFilters active" type="button">
-            Muscles
-          </button>
-        </li>
-        <li>
-          <button class="exercises__btn btnFilters" type="button">
-            Body parts
-          </button>
-        </li>
-        <li>
-          <button class="exercises__btn btnFilters" type="button">
-            Equipment
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="quote-filters__container container">
-    <div class="aside__container col quote-col">
-      <div class="quote-container">
+      <div class="container">
+        <section class="exercises-section">
+          <div class="filters-holder">
+  <h2 class="filters-title">Exercises</h2>
+  <form class="search-form" role="search">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    <button type="button" class="clear-button" aria-label="Clear search">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        fill="none"
+      >
+        <path
+          stroke="#242424"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          d="m12.75 5.25-7.5 7.5m0-7.5 7.5 7.5"
+        />
+      </svg>
+    </button>
+    <button type="submit" class="search-button" aria-label="Submit search">
+      <svg width="18" height="18">
+        <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-search"></use>
+      </svg>
+    </button>
+  </form>
+  <ul class="filters" id="filters">
+    <li>
+      <button type="button" class="filter-button active" data-filter="Muscles">
+        Muscles
+      </button>
+    </li>
+    <li>
+      <button type="button" class="filter-button" data-filter="Body parts">
+        Body parts
+      </button>
+    </li>
+    <li>
+      <button type="button" class="filter-button" data-filter="Equipment ">
+        Equipment
+      </button>
+    </li>
+  </ul>
+</div>
+
+          <div class="exercises-holder">
+            <div class="exercises-cards">
+              <div class="categories">
+    <ul class="categories-list">
+    </ul>
+</div>
+
+              <div class="exercises-container">
+  <ul class="exercises-list"></ul>
+</div>
+
+              <div class="pagination"></div>
+
+            </div>
+            <div class="quote-container">
   <div class="quote-card">
     <div>
       <svg class="quote-icon">
@@ -185,25 +226,25 @@
     <!-- Mobile image -->
     <source
       media="(max-width: 767px)"
-      srcset="/body-shape/assets/qoute-mobile-CPP46gBM.jpg 1x, /body-shape/assets/qoute-mobile@2x-BN_WvWna.jpg 2x"
+      srcset="/your_energy_vanilla_js/assets/qoute-mobile-CPP46gBM.jpg 1x, /your_energy_vanilla_js/assets/qoute-mobile@2x-BN_WvWna.jpg 2x"
     />
     <!-- Tablet image -->
     <source
       media="(min-width: 767px) and (max-width: 1439px)"
-      srcset="/body-shape/assets/qoute-tablet-DV8hU1TX.jpg 1x, /body-shape/assets/qoute-tablet@2x-DXqywC4S.jpg 2x"
+      srcset="/your_energy_vanilla_js/assets/qoute-tablet-DV8hU1TX.jpg 1x, /your_energy_vanilla_js/assets/qoute-tablet@2x-DXqywC4S.jpg 2x"
     />
     <!-- Desktop image -->
     <source
       media="(min-width: 1440px)"
-      srcset="/body-shape/assets/qoute-desktop-BqZUJP1D.jpg 1x, /body-shape/assets/qoute-desktop@2x-BXt4fF_U.jpg 2x"
+      srcset="/your_energy_vanilla_js/assets/qoute-desktop-BqZUJP1D.jpg 1x, /your_energy_vanilla_js/assets/qoute-desktop@2x-BXt4fF_U.jpg 2x"
     />
-    <img class="quote-image" src="/body-shape/assets/qoute-desktop-BqZUJP1D.jpg" alt="girls" />
+    <img class="quote-image" src="/your_energy_vanilla_js/assets/qoute-desktop-BqZUJP1D.jpg" alt="girls" />
   </picture>
 
   <div class="quote-card white">
     <div>
       <svg class="quote-icon">
-        <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-dumb-bell"></use>
+        <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-dumb-bell"></use>
       </svg>
     </div>
     <div>
@@ -224,202 +265,79 @@
   </div>
 </div>
 
-    </div>
-    <ul class="aside__container-list">
-      <li>
-        <div class="filters__container">
-          <ul class="filters__list js-list"></ul>
-          <div id="pagination-numbers" class="pagination-buttons"></div>
-        </div>
-      </li>
-    </ul>
-      <!-- Quote of the Day Component -->
-
-    </div>
-  </div>
-</section>
-
-    </main>
-    <div class="overlay hidden">
-  <div class="modal-exercises hidden"></div>
-</div>
-
-    <div class="modal-rating overlay is-hidden">
-  <div class="rating-container">
-    <button type="button" class="rating-close-btn">
-      <svg class="rating-icon-close" width="12" height="12">
-        <use href="../img/sprite.svg#icon-menu-mobile-close"></use>
-      </svg>
-    </button>
-
-    <div class="rating-wrapper">
-      <form action="#" class="form form_margin">
-        <div class="form__item">
-          <div class="form__label">Rating</div>
-          <div class="rating rating_set">
-            <div class="rating__value">0.0</div>
-            <div class="rating__body">
-              <div class="rating__active"></div>
-              <div class="rating__items">
-                <input
-                  type="radio"
-                  class="rating__item"
-                  value="1"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  class="rating__item"
-                  value="2"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  class="rating__item"
-                  value="3"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  class="rating__item"
-                  value="4"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  class="rating__item"
-                  value="5"
-                  name="rating"
-                />
-              </div>
-            </div>
           </div>
+        </section>
+      </div>
+    </main>
 
+    <footer class="footer">
+  <div class="container">
+    <div class="footer-content-holder">
+      <div class="logo-section">
+        <a href="index.html" class="logo">
+          <svg class="logo">
+            <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <ul class="social-media-links">
+          <li>
+            <a
+              href="https://www.facebook.com/goITclub/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg width="28" height="28">
+                <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/goitclub/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg width="28" height="28">
+                <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg width="28" height="28">
+                <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <h2 class="footer-title">
+        Transforming your <span>body</span> shape with us
+      </h2>
+      <div class="subscription-form-holder">
+        <h3>Subscribe and learn about new exercises!</h3>
+        <form class="subscription-form" id="subscription-form">
           <input
-            class="rating-email"
             type="email"
             name="email"
             placeholder="Email"
             required
+            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
           />
-
-          <textarea
-            class="rating-comment"
-            name="comment"
-            placeholder="Your comment"
-          ></textarea>
-        </div>
-        <button class="form__btn btn modal-button" type="submit" disabled>Send</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-    <!-- loader -->
-
-
-    <footer class="footer">
-  <div class="footer-container container">
-    <div class="footer-content">
-      <div class="footer-logo-and-social">
-        <a
-          href="./index.html"
-          class="footer-logo-link"
-          aria-label="YouEnergy"
-        >
-        <svg class="logo logo-footer">
-          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-logo"></use>
-        </svg>
-        </a>
-
-        <ul class="footer-social-list">
-          <li class="footer-social-link">
-            <a
-              class="footer-icon"
-              href="https://www.facebook.com/goITclub/"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <svg
-                class="footer-svg"
-                viewBox="0 0 32 32"
-                width="24"
-                height="24"
-                aria-hidden="true"
-              >
-                <use x="0" y="0" href="/body-shape/assets/icons-DfwoJ68I.svg#icon-facebook"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="footer-social-link">
-            <a
-              class="footer-icon"
-              href="https://www.instagram.com/goitclub/"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <svg
-                class="footer-svg"
-                viewBox="0 0 32 32"
-                width="24"
-                height="24"
-                aria-hidden="true"
-              >
-                <use x="0" y="0" href="/body-shape/assets/icons-DfwoJ68I.svg#icon-instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="footer-social-link">
-            <a
-              class="footer-icon"
-              href="https://www.youtube.com/c/GoIT"
-              target="_blank"
-              aria-label="YouTube"
-            >
-              <svg
-                class="footer-svg"
-                viewBox="0 0 32 32"
-                width="24"
-                height="24"
-                aria-hidden="true"
-              >
-                <use x="0" y="0" href="/body-shape/assets/icons-DfwoJ68I.svg#icon-youtube"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer-form">
-        <h2>Transforming  your <span class="footer-span">body</span> shape with us</h2>
-        <form class="subscribe-form" autocomplete="off">
-          <label>
-            Subscribe and learn about new exercises!
-            <input
-              type="email"
-              name="email"
-              required
-              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-              placeholder="Email"
-              id='email'
-            />
-          </label>
-          <button type="submit" id='send-button'>Send</button>
+          <button type="submit">Send</button>
         </form>
       </div>
     </div>
 
-    <div class="bottom">
-        <p class="bottom-p">Your Energy. All rights reserved.</p>
-      <div class="footer-links-wrapper">
-        <ul class="footer-links">
-          <li><a class="policy" href="#">Privacy Policy /</a></li>
-          <li><a class="policy" href="#">Terms of Service</a></li>
-        </ul>
-        <p class="copyright">&#169; 2023</p>
-      </div>
-    </div>
-
+    <ul class="privacy-policy">
+      <li>Your Energy. All rights reserved.</li>
+      <li>Privacy Policy / Terms of Service</li>
+      <li>©2024</li>
+    </ul>
   </div>
 </footer>
 
@@ -444,7 +362,7 @@
         rel="noreferrer"
       >
         <svg width="28" height="28">
-          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-facebook"></use>
+          <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-facebook"></use>
         </svg>
       </a>
     </li>
@@ -455,19 +373,29 @@
         rel="noreferrer"
       >
         <svg width="28" height="28">
-          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-instagram"></use>
+          <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-instagram"></use>
         </svg>
       </a>
     </li>
     <li>
       <a href="https://www.youtube.com/c/GoIT" target="_blank" rel="noreferrer">
         <svg width="28" height="28">
-          <use href="/body-shape/assets/sprite-BEocIRHz.svg#icon-youtube"></use>
+          <use href="/your_energy_vanilla_js/assets/sprite-Dd7_Nwib.svg#icon-youtube"></use>
         </svg>
       </a>
     </li>
   </ul>
 </div>
+
+    <div class="modal-backdrop"></div>
+<div class="modal"></div>
+</div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">
+  <svg width="20" height="20">
+    <use href=" ./img/sprite.svg#icon-arrow-top"></use>
+  </svg>
+</button>
 
 
   </body>
