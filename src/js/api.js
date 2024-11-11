@@ -1,51 +1,80 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://your-energy.b.goit.study/api';
+const api = axios.create({
+  baseURL: 'https://your-energy.b.goit.study/api',
+  headers: {
+    Accept: 'application/json',
+  },
+});
 
-class APIService {
-  constructor() {
-    this.baseURL = BASE_URL;
-    this.page = 0;
+export const fetchCategories = async (filter = 'Muscles', page = 1) => {
+  const isMobile = window.innerWidth < 768;
+  const limit = isMobile ? 9 : 12;
+
+  try {
+    const response = await api.get('/filters', {
+      params: {
+        filter,
+        page,
+        limit,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching categories:', error);
   }
+};
 
-  async getExercises(params1, params2, page = 1) {
-    const fullUrl = `${this.baseURL}/exercises?${params1}=${params2}&page=${page}&limit=10`;
-    return this.requestGET(fullUrl);
+export const fetchQuote = async () => {
+  try {
+    const response = await api.get('/quote');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching the quote:', error);
   }
+};
 
-  async getSearch(params1, params2, params3) {
-    const fullUrl = `${this.baseURL}/exercises?${params2}=${params1}&keyword=${params3}&page=1&limit=10`;
-    return this.requestGET(fullUrl);
+export const fetchExercises = async ({
+  bodypart = '',
+  muscles = '',
+  equipment = '',
+  keyword = '',
+  page = 1,
+  limit = 10,
+}) => {
+  try {
+    const response = await api.get('/exercises', {
+      params: {
+        bodypart,
+        muscles,
+        equipment,
+        keyword,
+        page,
+        limit,
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching exercises:', error);
   }
+};
 
-  async getExercisesById(id) {
-    const fullUrl = `${this.baseURL}/exercises/${id}`;
-    return this.requestGET(fullUrl);
+export const fetchExerciseById = async id => {
+  try {
+    const response = await api.get(`/exercises/${id}`);
+    return response.data;
+  } catch (e) {
+    console.error('Error fetching exercise by id:', e);
   }
+};
 
-  async getFilter(params, page = 1) {
-    const fullUrl = `${this.baseURL}/filters?filter=${params}&page=${page}&limit=12`;
-    return this.requestGET(fullUrl);
+export const subscribeEmail = async email => {
+  const response = await api.post('/subscription', { email });
+
+  if (response.data?.error) {
+    throw new Error(response.data?.error || 'Subscription failed');
   }
-
-  async getQuote() {
-    const fullUrl = `${this.baseURL}/quote`;
-    return this.requestGET(fullUrl);
-  }
-
-  async postSubscriptions(email) {
-    const fullUrl = `${this.baseURL}/subscription`;
-    return axios.post(fullUrl, { email });
-  }
-
-  async requestGET(url) {
-    try {
-      const response = await axios.get(url);
-      return response.data;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-}
-
-export default APIService;
+  return response.data;
+};

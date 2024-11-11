@@ -1,0 +1,34 @@
+.scroll-to-top-btn {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--ANIMATION), visibility var(--ANIMATION);
+}
+
+.scroll-to-top-btn.active {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--dark-gray);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (min-width: 1440px) {
+    .scroll-to-top-btn {
+        width: 100px;
+        height: 100px;
+    }
+
+    .scroll-to-top-btn svg {
+        width: 33px;
+        height: 33px;
+    }
+}

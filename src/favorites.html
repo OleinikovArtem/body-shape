@@ -4,33 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla App Template</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/favorites.css" />
-    <link rel="stylesheet" href="./css/exercise-card.css" />
-    <link rel="stylesheet" href="./css/quote.css" />
-    <title>Your Energy - Favorites</title>
   </head>
+
   <body>
     <load src="./partials/header.html" />
+
     <main>
       <div class="container">
-        <h1 class="favorites_title">Favorites</h1>
-      </div>
-      <section class="favorites-section container">
-        <div class="exercises_side">
-          <!-- Quote of the Day Component -->
+        <div class="favorites-content-holder">
+          <h2 class="favorites-title">Favorites</h2>
+        <div class="favorites-exercises-holder">
           <load src="./partials/favorites-quote.html" />
+          <load src="./partials/exercises.html" />
+        <div class="favorites-content-holder">
         </div>
-        <!-- List of Favorite Exercises -->
-        <div class="exercises_content-wrap">
-          <ul class="favorites-list exercises_content">
-            <!-- Dynamic exercise cards will be inserted here -->
-          </ul>
-        </div>
-      </section>
+      </div>
     </main>
+
     <load src="./partials/mobile-menu.html" />
-    <load src="./partials/modal-exercise.html" />
+    <load src="./partials/modal.html" />
+
     <script type="module" src="./js/favorites.js"></script>
   </body>
 </html>
